@@ -6,9 +6,15 @@ All available models listed below 👇
 
 ---
 
+### 📦 Code Resource: **Small Client**
+Get the notebook and start chatting right away:  
+👉 **[Small Client (`TalkToArgon.ipynb`)](https://github.com/peterbabulik/BeTerByPeter/blob/main/TalkToArgon.ipynb)**
+
+---
+
 ## 📋 Available Frontier & Open Models in Kaggle Model Proxy
 
-You can switch to any of these models directly inside the client without entering any private API keys or credit cards (covered by Kaggle's free $10/day / $100/mo AI spend quota):
+You can switch between any of these models directly inside the Small Client without entering private API keys or credit cards (covered by Kaggle's free $10/day / $100/mo AI quota):
 
 ### 🌐 Google
 - `google/gemini-4-argon` *(Default)*
@@ -63,19 +69,19 @@ You can switch to any of these models directly inside the client without enterin
 
 ---
 
-## ✨ Features
+## ✨ Features of the Small Client
 
-- **Multi-Turn Chat with Full History:** Model remembers your code and conversation across multiple queries.
-- **Model Switcher Dropdown:** Seamlessly switch between Gemini 4 Argon, Claude Opus, GPT-6, or Grok in the same chat.
-- **Mobile-Friendly One-Click Copy:** Copies the raw response text to clipboard even inside sandboxed browser iframes.
-- **Auto-Export to Disk:** Automatically writes the conversation history to `/kaggle/working/argon_output.json` and extracts Python blocks as standalone `.py` files.
-- **In-Notebook Download Links:** Clickable download links right inside the output cell (no need to wrestle with Kaggle's mobile sidebar).
+- **Multi-Turn Memory:** Retains full context and conversation history across turns.
+- **Model Switcher Dropdown:** Switch dynamically between Gemini 4 Argon, Claude Opus, GPT-6, Grok, etc. in mid-conversation.
+- **Mobile-Friendly One-Click Copy:** Inline clipboard copy engineered to work reliably inside sandboxed mobile browser iframes.
+- **Local Disk Auto-Export:** Every response and full conversation is backed up to `/kaggle/working/argon_output.json` with extracted `.py` files.
+- **Direct Download Links:** Generates instant download links right below the chat window so you don't need to fiddle with Kaggle's mobile sidebars.
 
 ---
 
-## 🚀 Quick Start (In under 60 seconds)
+## 🚀 Quick Start Guide
 
-1. Ensure your Kaggle account is phone-verified (required to unlock the free AI quota).
-2. Go to **[kaggle.com/benchmarks/tasks/new](https://www.kaggle.com/benchmarks/tasks/new)** to create a new Task notebook (where the proxy credentials are pre-configured).
-3. Copy the code from `TalkToArgon.ipynb` (or the snippet below), paste it into a code cell, and hit **Run**.
-4. Type your prompts or paste multiline code and start talking to Argon!
+1. **Verify your Kaggle account:** Make sure phone verification is completed in your Kaggle profile to unlock free model proxy quotas.
+2. **Open a Task Environment:** Navigate to [kaggle.com/benchmarks/tasks/new](https://www.kaggle.com/benchmarks/tasks/new).
+3. **Load the Small Client:** Copy the code from **[Small Client (`TalkToArgon.ipynb`)](https://github.com/peterbabulik/BeTerByPeter/blob/main/TalkToArgon.ipynb)** and paste it into a code cell.
+4. **Run & Chat:** Press **Run**, enter your questions or code snippets, and enjoy free frontier AI benchmarking!
