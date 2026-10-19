@@ -6,15 +6,31 @@ All available models listed below 👇
 
 ---
 
-### 📦 Code Resource: **Small Client**
-Get the notebook and start chatting right away:  
-👉 **[Small Client (`TalkToArgon.ipynb`)](https://github.com/peterbabulik/BeTerByPeter/blob/main/TalkToArgon.ipynb)**
+### 📦 Code Resource: **Mini Client v3**
+Get the latest interactive workbench notebook:  
+👉 **[Mini Client v3 (`TalkToArgon.ipynb`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/805d61eca6df149015b9681a7011eaef8c31dd0c/TalkToArgon.ipynb)**
+
+---
+
+## ⚡ What's New in Mini Client v3 (`KaggleLLMWorkbench`)
+
+Mini Client v3 transforms the Kaggle notebook from a simple chat interface into a **full-fledged local execution and debugging IDE**:
+
+- 🏃 **Live Execution Engine:** Extracted Python (`.py`) and Bash (`.sh`) scripts get dynamic `▶️ Run <file>` buttons to execute directly inside your running Kaggle kernel.
+- 🔁 **Instant Debugging Feedback Loop:** Encountered an error or crash? Click **"Send Output/Error to AI"** to automatically feed the captured stdout/stderr traceback straight back into the prompt box for immediate fixes.
+- ⚙️ **Collapsible Advanced Configuration:**
+  - **Dynamic Temperature Slider:** Adjust sampling precision from `0.00` (deterministic code) to `1.50` (creative brainstorming).
+  - **Sliding-Window Memory Turns:** Control context retention (1 to 50 turns) to prevent context blowup and manage quota efficiently.
+  - **Custom System Prompt:** Define roles (e.g., Senior Python Architect, Security Auditor, Competitive Programmer) on the fly.
+- ↩️ **Undo Last Turn:** Made a typo or dissatisfied with a response? Hit **Undo Last** to pop the exchange and restore your prompt back into the editor.
+- 📁 **Smart Multi-Language File Extraction:** Auto-detects `%%writefile filename.ext` headers or automatically maps code fences (`py`, `sh`, `js`, `html`, `css`, `sql`, `cpp`, `json`) to clean files in `/kaggle/working/`.
+- 🎨 **Rich Code & Table Rendering:** Styled Markdown viewer with dark-themed syntax blocks, tabular layouts, and mobile-safe raw markdown copy buttons.
 
 ---
 
 ## 📋 Available Frontier & Open Models in Kaggle Model Proxy
 
-You can switch between any of these models directly inside the Small Client without entering private API keys or credit cards (covered by Kaggle's free $10/day / $100/mo AI quota):
+Switch between any of these models directly inside the client without entering private API keys or credit cards (covered by Kaggle's free $10/day / $100/mo AI quota):
 
 ### 🌐 Google
 - `google/gemini-4-argon` *(Default)*
@@ -69,19 +85,12 @@ You can switch between any of these models directly inside the Small Client with
 
 ---
 
-## ✨ Features of the Small Client
-
-- **Multi-Turn Memory:** Retains full context and conversation history across turns.
-- **Model Switcher Dropdown:** Switch dynamically between Gemini 4 Argon, Claude Opus, GPT-6, Grok, etc. in mid-conversation.
-- **Mobile-Friendly One-Click Copy:** Inline clipboard copy engineered to work reliably inside sandboxed mobile browser iframes.
-- **Local Disk Auto-Export:** Every response and full conversation is backed up to `/kaggle/working/argon_output.json` with extracted `.py` files.
-- **Direct Download Links:** Generates instant download links right below the chat window so you don't need to fiddle with Kaggle's mobile sidebars.
-
----
-
 ## 🚀 Quick Start Guide
 
-1. **Verify your Kaggle account:** Make sure phone verification is completed in your Kaggle profile to unlock free model proxy quotas.
-2. **Open a Task Environment:** Navigate to [kaggle.com/benchmarks/tasks/new](https://www.kaggle.com/benchmarks/tasks/new).
-3. **Load the Small Client:** Copy the code from **[Small Client (`TalkToArgon.ipynb`)](https://github.com/peterbabulik/BeTerByPeter/blob/main/TalkToArgon.ipynb)** and paste it into a code cell.
-4. **Run & Chat:** Press **Run**, enter your questions or code snippets, and enjoy free frontier AI benchmarking!
+1. **Verify your Kaggle account:** Complete SMS/phone verification in your Kaggle profile to unlock free model proxy quotas.
+2. **Open a Task Environment:** Visit [kaggle.com/benchmarks/tasks/new](https://www.kaggle.com/benchmarks/tasks/new) to spin up an environment with injected model proxy access.
+3. **Load the Mini Client v3:** Copy the code from **[TalkToArgon.ipynb](https://github.com/peterbabulik/TalkToArgon10100102026/blob/805d61eca6df149015b9681a7011eaef8c31dd0c/TalkToArgon.ipynb)** into a code cell.
+4. **Run & Iterate:** 
+   - Ask Argon to generate a script (e.g. `Write a script that benchmarks numpy matrix multiplication with %%writefile bench.py`).
+   - Click `▶️ Run bench.py`.
+   - Inspect the terminal output or feed errors back directly with `Send Output/Error to AI`.
