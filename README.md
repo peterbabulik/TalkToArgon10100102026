@@ -6,6 +6,19 @@ All available models listed below 👇
 
 ---
 
+## 🚀 Quick Start Guide
+
+1. **Verify your Kaggle account:** Complete SMS/phone verification in your Kaggle profile to unlock free model proxy quotas.
+2. **Open a Task Environment:** Visit [kaggle.com/benchmarks/tasks/new](https://www.kaggle.com/benchmarks/tasks/new) to spin up an environment with injected model proxy access.
+3. **Load the Mini Client v3:** Copy the code from **[TalkToArgon.ipynb](https://github.com/peterbabulik/TalkToArgon10100102026/blob/805d61eca6df149015b9681a7011eaef8c31dd0c/TalkToArgon.ipynb)** into a code cell.
+4. **Run & Iterate:** 
+   - Ask Argon to generate a script (e.g. `Write a script that benchmarks numpy matrix multiplication with %%writefile bench.py`).
+   - Click `▶️ Run bench.py`.
+   - Inspect the terminal output or feed errors back directly with `Send Output/Error to AI`.
+
+---
+
+
 ### 📦 Code Resource: **Mini Client v3**
 Get the latest interactive workbench notebook:  
 👉 **[Mini Client v3 (`TalkToArgon.ipynb`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/805d61eca6df149015b9681a7011eaef8c31dd0c/TalkToArgon.ipynb)**
@@ -85,12 +98,3 @@ Switch between any of these models directly inside the client without entering p
 
 ---
 
-## 🚀 Quick Start Guide
-
-1. **Verify your Kaggle account:** Complete SMS/phone verification in your Kaggle profile to unlock free model proxy quotas.
-2. **Open a Task Environment:** Visit [kaggle.com/benchmarks/tasks/new](https://www.kaggle.com/benchmarks/tasks/new) to spin up an environment with injected model proxy access.
-3. **Load the Mini Client v3:** Copy the code from **[TalkToArgon.ipynb](https://github.com/peterbabulik/TalkToArgon10100102026/blob/805d61eca6df149015b9681a7011eaef8c31dd0c/TalkToArgon.ipynb)** into a code cell.
-4. **Run & Iterate:** 
-   - Ask Argon to generate a script (e.g. `Write a script that benchmarks numpy matrix multiplication with %%writefile bench.py`).
-   - Click `▶️ Run bench.py`.
-   - Inspect the terminal output or feed errors back directly with `Send Output/Error to AI`.
