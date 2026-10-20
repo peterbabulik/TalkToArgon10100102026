@@ -10,14 +10,14 @@ All available models listed below 👇
 
 1. **Verify your Kaggle account:** Complete SMS/phone verification in your Kaggle profile to unlock free model proxy quotas.
 2. **Open a Task Environment:** Visit [kaggle.com/benchmarks/tasks/new](https://www.kaggle.com/benchmarks/tasks/new) to spin up an environment with injected model proxy access.
-3. **Load Mini Client v5 (`argon_code_v5.py`):** Paste and run the snippet below in a notebook cell. It will download v5 and automatically populate the next cell with the full workbench code:
+3. **Load Workbench v7 (`argon_code_v7.py`):** Paste and run the snippet below in a notebook cell. It will download v7 and automatically populate the next cell with the full workbench code:
 
 ```python
 import urllib.request
 
-# Raw link to Version 5
-url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/1f3d462fdf7b6502bbfac97bc21bb32f24c9b38d/argon_code_v5.py"
-filename = "argon_code_v5.py"
+# Raw link to Version 7
+url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/5a532bb89ca47a03c319154629880e8f0333e646/argon_code_v7.py"
+filename = "argon_code_v7.py"
 
 # 1. Download the file
 urllib.request.urlretrieve(url, filename)
@@ -28,47 +28,56 @@ with open(filename, "r", encoding="utf-8") as f:
     get_ipython().set_next_input(f.read())
 ```
 
-4. **Run the populated cell** to launch the `KaggleLLMWorkbench` UI.
-5. **Run & Iterate:** 
-   - Attach existing files from your workspace or upload local code files.
-   - Ask Argon to generate a script (e.g. `Write a script that benchmarks numpy matrix multiplication with %%writefile bench.py`).
-   - Click `▶️ Run bench.py` or `📋 Copy bench.py`.
-   - Inspect the terminal output or feed errors back directly with `Send Output/Error to AI`.
+4. **Run the populated cell** to launch the `KaggleLLMWorkbench` v7 UI.
+5. **Run Single Prompt or SuperAgent:**
+   - **Single Prompt:** Select any frontier model, attach workspace/local files, and click `Send Prompt`.
+   - **Autonomous SuperAgent:** Enter a high-level goal (e.g. *"Build an optimized prime sieve with benchmarks and test suite in `prime.py`"*), configure your agent roles, and click `🚀 Launch SuperAgent`.
 
 ---
 
-### 📦 Code Resource: **Mini Client v5**
-Get the latest standalone Python workbench script:  
-👉 **[Mini Client v5 (`argon_code_v5.py`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/1f3d462fdf7b6502bbfac97bc21bb32f24c9b38d/argon_code_v5.py)**
+### 📦 Code Resource: **Workbench v7**
+Get the latest standalone Python script:  
+👉 **[Workbench v7 (`argon_code_v7.py`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/5a532bb89ca47a03c319154629880e8f0333e646/argon_code_v7.py)**
 
 ---
 
-## ⚡ What's New in Mini Client v5 (`KaggleLLMWorkbench`)
+## ⚡ What's New in Version 7 (`KaggleLLMWorkbench`)
 
-Mini Client v5 upgrades the Kaggle notebook into a **complete local execution, file-context, and debugging IDE**:
+Version 7 transforms the notebook into an **autonomous multi-agent coding IDE and live execution environment**:
 
-- 📎 **File Attachments (Workspace & Direct Upload):**
-  - Attach existing files directly from `/kaggle/working/` or upload multiple files from your computer (`.py`, `.js`, `.ts`, `.html`, `.css`, `.sh`, `.sql`, `.json`, `.yaml`, `.md`, `.cpp`, `.c`, `.java`, `.csv`, `.txt`).
-  - Automatic UTF-8 validation, line-count chips, and dynamic backtick fence scaling so nested code blocks never break your prompt.
-- 📋 **Iframe-Safe One-Click Copy Everywhere:**
-  - Dedicated **Copy Last** button in the main toolbar.
-  - Per-message **Copy Markdown** and individual **Copy `<lang> #N`** buttons on every model response card.
-  - **Copy `<filename>`** buttons alongside generated workspace files, powered by a kernel-to-browser JS bridge that bypasses Jupyter HTML sanitization and cross-origin iframe restrictions.
-- 🏃 **Live Execution Engine:** Extracted Python (`.py`) and Bash (`.sh`) scripts get dynamic `▶️ Run <file>` buttons to execute directly inside your running Kaggle kernel—capturing stdout, stderr, tables, and plots.
-- 🔁 **Instant Debugging Feedback Loop:** Encountered an error or crash? Click **"Send Output/Error to AI"** to automatically append the captured execution log/traceback straight into the prompt box for immediate fixes.
-- ⚙️ **Collapsible Advanced Configuration:**
-  - **Dynamic Temperature Slider:** Adjust sampling precision from `0.00` (deterministic code) to `1.50` (creative brainstorming).
-  - **Sliding-Window Memory Turns:** Control context retention (1 to 50 turns) to prevent context blowup and manage quota efficiently.
-  - **Custom System Prompt:** Define roles (e.g., Elite Software Architect, Security Auditor, Competitive Programmer) on the fly.
-- ↩️ **Full-State Undo Last Turn:** Made a typo or dissatisfied with a response? Hit **Undo Last** to pop the exchange and restore both your prompt text **and** its attached files back into the editor.
-- 📁 **Smart Multi-Language File Extraction:** Auto-detects `%%writefile filename.ext` headers or maps code fences (`py`, `sh`, `js`, `ts`, `html`, `css`, `sql`, `cpp`, `c`, `java`, `yaml`, `json`) to clean files in `/kaggle/working/` plus full session history in `argon_output.json`.
-- 🎨 **Modern Adaptive UI (Light & Dark Mode):** Refined glassmorphic header, status badges, and automatic `prefers-color-scheme: dark` styling.
+### 🤖 1. Autonomous Multi-Model SuperAgent Swarm
+Orchestrate specialized frontier models working as an agile engineering squad:
+- 👑 **Master Orchestrator:** Analyzes the objective, breaks tasks down into structured JSON plans, and coordinates the pipeline.
+- 🛠️ **Lead Coder:** Implements complete, self-contained scripts starting with `%%writefile <filename>`.
+- ⚡ **Kernel Sandbox Executor:** Executes generated Python (`.py`) and Bash (`.sh`) scripts directly inside your running IPython session to test outputs in real time.
+- 🧪 **Critic / QA Reviewer:** Investigates runtime errors, inspects tracebacks, and provides root-cause fixes back to the Coder.
+- ⏹️ **SuperAgent Controls:** Configurable maximum step slider (2–15 steps), autonomous execution toggle, and an instant **Stop Agent** kill-switch.
+
+### ⬇️ 2. Inverted Timeline (Newest Responses at the Top)
+- **Zero Scrolling:** Latest model responses and agent steps appear immediately at the **top** of the timeline.
+- **Timeline Direction Toggle:** Switch seamlessly between **⬇️ Newest First (Top)** and **⬆️ Oldest First (Bottom)** at any time.
+
+### 🏃 3. Live Kernel Execution & 750px Console
+- **Direct Notebook Execution:** Runs extracted `.py` and `.sh` files inside the active kernel session with full capture of `stdout`, `stderr`, tables, and tracebacks.
+- **Spacious Terminal View:** Expanded 750px full-width dark console.
+- **Instant Debugging Feedback Loop:** Click **"Send Output/Error to AI"** to immediately pipe console stdout/stderr back into the prompt box for rapid troubleshooting.
+- **Clipboard Output:** Dedicated **📋 Copy Console Output** button.
+
+### 📋 4. Dual-Header & Code-Level Clipboard Engine
+- **Dual Copy Action Bars:** Every model card features copy buttons at both the **top** and **bottom**, so you never have to scroll past long code blocks.
+- **Granular Block Copy:** Individual `📋 Copy <language> #N` buttons for every detected snippet.
+- **Iframe-Safe JS Bridge:** Kernel-to-browser clipboard bridge that works reliably inside Jupyter/Kaggle iframe sandboxes.
+
+### 📎 5. Advanced File Attachments & Context Management
+- Attach workspace files directly from `/kaggle/working/` or upload local files (`.py`, `.js`, `.ts`, `.sh`, `.sql`, `.json`, `.yaml`, `.md`, `.cpp`, `.java`, etc.).
+- Dynamic backtick fence scaling to prevent nested code blocks from corrupting prompts.
+- **Undo Last Turn:** Restores your prompt text and attached files back into the editor with full state preservation.
 
 ---
 
 ## 📋 Available Frontier & Open Models in Kaggle Model Proxy
 
-Switch between any of these models directly inside the client without entering private API keys or credit cards (covered by Kaggle's free $10/day / $100/mo AI quota):
+Switch between any of these models inside the workbench without personal API keys (covered by Kaggle's free quota):
 
 ### 🌐 Google
 - `google/gemini-4-argon` *(Default)*
