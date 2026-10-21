@@ -1,4 +1,4 @@
-# TalkToArgon10100102026 🤖⚡ (DyTopo Edition)
+# TalkToArgon10100102026 🤖⚡ (ArgonOS v9 Edition)
 
 Google wants 99 USD to talk to argon,  
 Kaggle gives you 100 USD to talk to argon (and other models)  
@@ -6,20 +6,21 @@ All available models listed below 👇
 
 ---
 
+
 ## 🚀 Quick Start Guide (Single-Cell Install — Recommended)
 
 1. **Verify your Kaggle account:** Complete SMS/phone verification in your Kaggle profile to unlock free model proxy quotas.
 2. **Open a Task Environment:** Visit [kaggle.com/benchmarks/tasks/new](https://www.kaggle.com/benchmarks/tasks/new) to spin up an environment with injected model proxy access.
-3. **Load Workbench v8 (`argon_code_v8.py`):** Paste and run the snippet below in a notebook cell. It will download v8 and automatically populate the next cell with the complete workbench code:
+3. **Load ArgonOS v9 (`argon_code_v9.py`):** Paste and run the snippet below in a notebook cell. It will download the verified v9 release and automatically populate the next cell with the complete operating system:
 
 ```python
 import urllib.request
 
-# Raw link to Version 8 (DyTopo Edition)
-url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/91157a54550c4eec0c2ea388b86abe43d4114784/argon_code_v8.py"
-filename = "argon_code_v8.py"
+# Raw link to ArgonOS v9 Release
+url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/d375ec394ff8c0cb806543bcff994b78e2f28482/argon_code_v9.py"
+filename = "argon_code_v9.py"
 
-# 1. Download the file
+# 1. Download the operating system
 urllib.request.urlretrieve(url, filename)
 print(f"File {filename} downloaded successfully.")
 
@@ -28,68 +29,104 @@ with open(filename, "r", encoding="utf-8") as f:
     get_ipython().set_next_input(f.read())
 ```
 
-4. **Run the populated cell** to launch the `KaggleLLMWorkbench` v8 UI.
-5. **Run Single Prompt or DyTopo Swarm:**
-   - **Interactive Direct Model:** Select any frontier model, attach workspace or local files, and click `Send Prompt`.
-   - **Autonomous DyTopo Swarm:** Enter a high-level engineering mission (e.g. *"Develop an optimized, vectorized Trie-based auto-complete engine in `trie_engine.py`, write a pytest suite, execute tests, profile memory/latency, and refine"*), choose your topology mode, and click `🕸️ Launch DyTopo Swarm`.
+4. **Run the populated cell** (or run `%run argon_code_v9.py`) to boot **ArgonOS v9**.
+5. **Multi-Task & Iterate:** Tap window headers to drag, click `□` to maximize any window to full screen, launch swarms, edit files, and execute live scripts.
 
 ---
 
-### 📦 Code Resource: **Workbench v8**
-Get the latest standalone Python script:  
-👉 **[Workbench v8 (`argon_code_v8.py`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/91157a54550c4eec0c2ea388b86abe43d4114784/argon_code_v8.py)**
+### 📦 Code Resource: **ArgonOS v9**
+Get the latest standalone Python operating system script:  
+👉 **[ArgonOS v9 (`argon_code_v9.py`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/d375ec394ff8c0cb806543bcff994b78e2f28482/argon_code_v9.py)**
 
 ---
 
-## ⚡ What's New in Version 8: DyTopo Architecture
+## ⚡ What's New in ArgonOS v9
 
-Version 8 introduces **DyTopo (Dynamic Agent Interaction Topology)**—turning your Kaggle notebook into a self-reconfiguring, multi-model AI engineering swarm with real-time visual telemetry:
+Version 9 transforms the linear notebook into a **Touch-Native Multi-Window Desktop Operating System (Cloud Workstation)** built specifically for mobile and desktop screens alike:
 
-### 🕸️ 1. Dynamic Interaction Topology Modes
-Instead of a static conversation loop, DyTopo dynamically shifts the multi-agent routing graph based on task complexity:
-- **Adaptive (Auto-Evolving Graph):** The Lead Architect continuously observes progress and dynamically draws new communication edges between specialists.
-- **Star (Master Orchestrator):** Centralized hub-and-spoke coordination where the Architect commands individual specialists.
-- **Chain (Sequential Pipeline):** Linear staged workflow (Architect ➔ Coder ➔ Tester ➔ Critic ➔ Benchmarker).
-- **Peer Debate (Round-Robin Consensus):** Cross-model adversarial debate and mutual verification until convergence.
-- **Hierarchical Tree (Tiered Delegation):** Deep tree decomposition with specialized sub-teams.
+### 🪟 1. Micro-Kernel Window Manager Engine
+- **Touch-First Pointer Dragging:** Built with unified Pointer Events (`setPointerCapture`) so you can drag windows seamlessly on your smartphone without triggering page scroll.
+- **Tap-to-Focus Layering:** Tapping any window instantly brings it to the top of the Z-stack with an active cyan neon border.
+- **Per-Window Maximize & Resize:** Every window features a `□` / `🗗` maximize toggle that expands to fill the entire desktop, plus a touch-friendly bottom-right corner resize grip.
+- **Hardware Fullscreen F11 Mode:** Tap `⛶ Fullscreen` to expand the entire desktop to 100vw × 100vh, eliminating browser address bars and turning your phone into a native workstation.
+- **GPU-Accelerated RGB LED Perimeter Glow:** An ambient neon light strip runs around the screen perimeter, automatically pulsing and sweeping colors while models are thinking or scripts are executing.
 
-### 👥 2. Five Specialized Engineering Roles
-Assign distinct frontier models to specialized cognitive roles:
-- 🏛️ **Lead Architect:** System decomposition, dynamic edge routing, and overall plan coordination.
-- 🛠️ **Specialist Coder:** Implementation, modular software architecture, and production code exports (`%%writefile`).
-- 🧪 **Test Engineer:** Test suites, edge-case validation, and assertion harnesses.
-- 🛡️ **Security / QA Critic:** Vulnerability scanning, logic verification, and sanity checks.
-- ⚡ **Benchmark Analyst:** Big-O complexity analysis, execution profiling, and latency/memory optimization.
+### 📱 2. Three-Section Mobile Taskbar
+- **Left:** System Telemetry Monitor displaying real-time hardware status (`🟢 ARGON-OS v9`, `🧠 RAM: 1.3/31.3 GB`, `💾 Quota`).
+- **Center:** One-tap `⛶ Fullscreen` / `🗗 Exit` toggle.
+- **Right:** Dynamic Application Launcher Dock (`🤖 TALK`, `📁 FILES`, `✏️ EDITOR`, `⚡ CONSOLE`, `⚙️ BIOS`).
 
-### 📡 3. Multi-Channel Routing Protocol
-Agent interactions are explicitly categorized and badged in the timeline:
-- `Direct Message` — Targeted 1-on-1 handoff between specialists.
-- `Team Broadcast` — Swarm-wide announcements and architectural updates.
-- `Reflection Loop` — Self-correction and internal validation cycles.
-- `Consensus Gate` — Final gatekeeping check before completing a mission.
+### 📦 3. Five Pre-Installed Native Core Applications
 
-### 📊 4. Live Reactive SVG Graph Visualizer
-- **Native SVG Rendering:** Real-time visual topology graph rendered directly inside the notebook without external JavaScript dependencies.
-- **Visual Node States:** Glowing status badges indicating node activity (`ACTIVE`, `REVIEWING`, `COMPLETED`, `IDLE`).
-- **Dynamic Edge Weights:** Interactive lines that thicken and scale as messages and code pass between agents.
-- **Topology History Log:** Real-time terminal feed recording every routing decision, channel switch, and agent transition.
+#### 🤖 1. TalkToArgon & DyTopo Swarm Studio
+- Direct prompt access to Google Gemini 4 Argon, Claude Opus, GPT-6, DeepSeek, and Qwen.
+- Full DyTopo interaction topology modes (**Adaptive**, **Star**, **Chain**, **Peer Debate**, **Hierarchical Tree**).
+- Reactive SVG interaction graph, specialist role delegation, and reverse conversation timeline (newest answers at top).
 
-### ⚡ 5. Execution Sandbox & 750px Console
-- **Direct Notebook Execution:** Safely runs generated Python (`.py`) and Bash (`.sh`) scripts in the live IPython kernel.
-- **Full Stdout/Stderr Capture:** Full traceback, table, and print capture inside an expansive 750px dark terminal.
-- **Feedback Loop:** Click **"Send Output/Error to AI"** to immediately pipe errors or benchmark logs back into the prompt box.
-- **Clipboard Output:** One-click **📋 Copy Console Output** button.
+#### 📁 2. Argon Files Explorer
+- Real-time filesystem scanner for `/kaggle/working/` showing file size chips, extensions, and modification timestamps.
+- One-click actions on every file: `✏️ Edit`, `▶️ Run`, `📋 Copy Code`, `👁️ Info`.
 
-### 📋 6. Full-Width Cards & Zero-Scroll Timeline
-- **⬇️ Newest First by Default:** Latest answers and agent actions appear right at the top so you never need to scroll down.
-- **Dual Copy Action Bars:** Response cards feature copy buttons at both the **header** and **footer**, allowing one-click copying of full Markdown or individual code snippets (`📋 Copy python #1`).
-- **Iframe-Safe JS Bridge:** Reliable clipboard copying that bypasses Kaggle/Jupyter iframe sandbox constraints.
+#### ✏️ 3. Argon Code Editor (Mobile IDE)
+- Dark-themed monospace code editor designed for touch editing on phones.
+- Load any workspace script, edit lines with mobile virtual keyboards, and click `💾 Save File` to write changes directly back to disk.
+
+#### ⚡ 4. Sandbox Console & Execution Terminal
+- Live execution engine for `.py` (via IPython `%run`) and `.sh` (via bash) capturing stdout, stderr, and tracebacks.
+- Instant debugging feedback: click `↩️ Send Error/Output to AI` to pipe tracebacks back to the swarm for immediate fixes.
+
+#### ⚙️ 5. System Settings & BIOS Telemetry
+- Controls for LLM sampling temperature and context memory turns.
+- Manual toggle switch for the RGB LED perimeter lighting effect (`⚡ LED FX: ON / OFF`).
 
 ---
+
+## 🕳️🐇 Easter Egg: The Matrix Inception (v8 inside v7)
+
+> *"Unfortunately, no one can be told what the Matrix is. You have to see it for yourself."*
+
+During development, **SuperAgent v7** was tasked with architecting the new **DyTopo v8 engine**. In a true recursive self-bootstrapping loop, the v7 agent:
+1. Designed and wrote the full `argon_code_v8.py` module using `%%writefile`.
+2. Automatically executed `argon_code_v8.py` directly inside its live IPython sandbox.
+3. **Booted the entire graphical v8 DyTopo Workbench with its live SVG graph inside v7's own execution console!** 🤯
+
+<div align="center">
+
+### 🎬 Live Demo: Recursive Agent Inception
+
+<!-- Embedded Video Tag -->
+<video src="https://github.com/peterbabulik/TalkToArgon10100102026/raw/main/screen-20261021-194415~2.mp4" controls width="100%" style="max-width: 680px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);"></video>
+
+<br>
+
+👉 **[🎥 Click here to watch the full MP4 demo (screen-20261021-194415~2.mp4)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/main/screen-20261021-194415~2.mp4)**
+
+*Agent v7 giving birth to and executing Agent v8 in real-time inside the live kernel sandbox.*
+
+</div>
+
+---
+
+## 🧬 A Software Developed "By Itself" (Autonomous Self-Bootstrapping)
+
+> **"Can software write, test, diagnose, and evolve its own operating system without human code typing?"**  
+> **Yes. ArgonOS v9 is the living proof.**
+
+ArgonOS v9 was not coded by hand. It was **architected, written (2,600+ lines of Python, HTML5, CSS3, and JavaScript), executed, diagnosed via a Reflection Loop, and in-place patched autonomously by the AI Swarm itself** running directly inside a Kaggle mobile browser session in under **5 minutes**:
+
+1. **Autonomous Conception:** Guided only by a high-level goal, the **Lead Architect (Gemini-4-Argon)** structured a 5-application micro-kernel OS.
+2. **First-Pass Generation:** The **Specialist Coder** generated the initial 2,600-line codebase (`argon_code_v9.py`) via `%%writefile`.
+3. **Automated Sandbox Execution:** The **Sandbox Executor** ran the code inside the live IPython kernel, catching an initial `AttributeError` at runtime.
+4. **Self-Healing Reflection Loop:** Instead of failing, the Architect opened a cognitive `Reflection Loop`, conducted an automated root-cause analysis on the traceback, and dispatched an in-place patch to the Coder.
+5. **Verified Boot:** Within 4 minutes and 33 seconds, the swarm hot-patched its own source file, re-tested it, and reported:  
+   `ARGON_OS_V9_BOOT: PASS | Registered Apps: ['console', 'editor', 'files', 'sysinfo', 'talk'] | Touch Drag Engine: ACTIVE`
+
+## try it yourself 
+
 
 ## 📋 Available Frontier & Open Models in Kaggle Model Proxy
 
-Switch between any of these models inside the workbench without personal API keys (covered by Kaggle's free quota):
+Switch between any of these models inside ArgonOS without personal API keys (covered by Kaggle's free quota):
 
 ### 🌐 Google
 - `google/gemini-4-argon` *(Default)*
@@ -141,29 +178,3 @@ Switch between any of these models inside the workbench without personal API key
 - `xai/grok-4.6`
 - `xai/grok-4.5-0708`
 - `zai/glm-5`
-
----
-
-## 🕳️🐇 Easter Egg: The Matrix Inception (v8 inside v7)
-
-> *"Unfortunately, no one can be told what the Matrix is. You have to see it for yourself."*
-
-During development, **SuperAgent v7** was tasked with architecting the new **DyTopo v8 engine**. In a true recursive self-bootstrapping loop, the v7 agent:
-1. Designed and wrote the full `argon_code_v8.py` module using `%%writefile`.
-2. Automatically executed `argon_code_v8.py` directly inside its live IPython sandbox.
-3. **Booted the entire graphical v8 DyTopo Workbench with its live SVG graph inside v7's own execution console!** 🤯
-
-<div align="center">
-
-### 🎬 Live Demo: Recursive Agent Inception
-
-<!-- Embedded Video Tag -->
-<video src="https://github.com/peterbabulik/TalkToArgon10100102026/raw/main/screen-20261021-194415~2.mp4" controls width="100%" style="max-width: 680px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);"></video>
-
-<br>
-
-👉 **[🎥 Click here to watch the full MP4 demo (screen-20261021-194415~2.mp4)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/main/screen-20261021-194415~2.mp4)**
-
-*Agent v7 giving birth to and executing Agent v8 in real-time inside the live kernel sandbox.*
-
-</div>
