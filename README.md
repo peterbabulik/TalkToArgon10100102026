@@ -1,4 +1,4 @@
-# TalkToArgon10100102026 🤖⚡
+# TalkToArgon10100102026 🤖⚡ (DyTopo Edition)
 
 Google wants 99 USD to talk to argon,  
 Kaggle gives you 100 USD to talk to argon (and other models)  
@@ -10,14 +10,14 @@ All available models listed below 👇
 
 1. **Verify your Kaggle account:** Complete SMS/phone verification in your Kaggle profile to unlock free model proxy quotas.
 2. **Open a Task Environment:** Visit [kaggle.com/benchmarks/tasks/new](https://www.kaggle.com/benchmarks/tasks/new) to spin up an environment with injected model proxy access.
-3. **Load Workbench v7 (`argon_code_v7.py`):** Paste and run the snippet below in a notebook cell. It will download v7 and automatically populate the next cell with the full workbench code:
+3. **Load Workbench v8 (`argon_code_v8.py`):** Paste and run the snippet below in a notebook cell. It will download v8 and automatically populate the next cell with the complete workbench code:
 
 ```python
 import urllib.request
 
-# Raw link to Version 7
-url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/5a532bb89ca47a03c319154629880e8f0333e646/argon_code_v7.py"
-filename = "argon_code_v7.py"
+# Raw link to Version 8 (DyTopo Edition)
+url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/91157a54550c4eec0c2ea388b86abe43d4114784/argon_code_v8.py"
+filename = "argon_code_v8.py"
 
 # 1. Download the file
 urllib.request.urlretrieve(url, filename)
@@ -28,50 +28,62 @@ with open(filename, "r", encoding="utf-8") as f:
     get_ipython().set_next_input(f.read())
 ```
 
-4. **Run the populated cell** to launch the `KaggleLLMWorkbench` v7 UI.
-5. **Run Single Prompt or SuperAgent:**
-   - **Single Prompt:** Select any frontier model, attach workspace/local files, and click `Send Prompt`.
-   - **Autonomous SuperAgent:** Enter a high-level goal (e.g. *"Build an optimized prime sieve with benchmarks and test suite in `prime.py`"*), configure your agent roles, and click `🚀 Launch SuperAgent`.
+4. **Run the populated cell** to launch the `KaggleLLMWorkbench` v8 UI.
+5. **Run Single Prompt or DyTopo Swarm:**
+   - **Interactive Direct Model:** Select any frontier model, attach workspace or local files, and click `Send Prompt`.
+   - **Autonomous DyTopo Swarm:** Enter a high-level engineering mission (e.g. *"Develop an optimized, vectorized Trie-based auto-complete engine in `trie_engine.py`, write a pytest suite, execute tests, profile memory/latency, and refine"*), choose your topology mode, and click `🕸️ Launch DyTopo Swarm`.
 
 ---
 
-### 📦 Code Resource: **Workbench v7**
+### 📦 Code Resource: **Workbench v8**
 Get the latest standalone Python script:  
-👉 **[Workbench v7 (`argon_code_v7.py`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/5a532bb89ca47a03c319154629880e8f0333e646/argon_code_v7.py)**
+👉 **[Workbench v8 (`argon_code_v8.py`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/91157a54550c4eec0c2ea388b86abe43d4114784/argon_code_v8.py)**
 
 ---
 
-## ⚡ What's New in Version 7 (`KaggleLLMWorkbench`)
+## ⚡ What's New in Version 8: DyTopo Architecture
 
-Version 7 transforms the notebook into an **autonomous multi-agent coding IDE and live execution environment**:
+Version 8 introduces **DyTopo (Dynamic Agent Interaction Topology)**—turning your Kaggle notebook into a self-reconfiguring, multi-model AI engineering swarm with real-time visual telemetry:
 
-### 🤖 1. Autonomous Multi-Model SuperAgent Swarm
-Orchestrate specialized frontier models working as an agile engineering squad:
-- 👑 **Master Orchestrator:** Analyzes the objective, breaks tasks down into structured JSON plans, and coordinates the pipeline.
-- 🛠️ **Lead Coder:** Implements complete, self-contained scripts starting with `%%writefile <filename>`.
-- ⚡ **Kernel Sandbox Executor:** Executes generated Python (`.py`) and Bash (`.sh`) scripts directly inside your running IPython session to test outputs in real time.
-- 🧪 **Critic / QA Reviewer:** Investigates runtime errors, inspects tracebacks, and provides root-cause fixes back to the Coder.
-- ⏹️ **SuperAgent Controls:** Configurable maximum step slider (2–15 steps), autonomous execution toggle, and an instant **Stop Agent** kill-switch.
+### 🕸️ 1. Dynamic Interaction Topology Modes
+Instead of a static conversation loop, DyTopo dynamically shifts the multi-agent routing graph based on task complexity:
+- **Adaptive (Auto-Evolving Graph):** The Lead Architect continuously observes progress and dynamically draws new communication edges between specialists.
+- **Star (Master Orchestrator):** Centralized hub-and-spoke coordination where the Architect commands individual specialists.
+- **Chain (Sequential Pipeline):** Linear staged workflow (Architect ➔ Coder ➔ Tester ➔ Critic ➔ Benchmarker).
+- **Peer Debate (Round-Robin Consensus):** Cross-model adversarial debate and mutual verification until convergence.
+- **Hierarchical Tree (Tiered Delegation):** Deep tree decomposition with specialized sub-teams.
 
-### ⬇️ 2. Inverted Timeline (Newest Responses at the Top)
-- **Zero Scrolling:** Latest model responses and agent steps appear immediately at the **top** of the timeline.
-- **Timeline Direction Toggle:** Switch seamlessly between **⬇️ Newest First (Top)** and **⬆️ Oldest First (Bottom)** at any time.
+### 👥 2. Five Specialized Engineering Roles
+Assign distinct frontier models to specialized cognitive roles:
+- 🏛️ **Lead Architect:** System decomposition, dynamic edge routing, and overall plan coordination.
+- 🛠️ **Specialist Coder:** Implementation, modular software architecture, and production code exports (`%%writefile`).
+- 🧪 **Test Engineer:** Test suites, edge-case validation, and assertion harnesses.
+- 🛡️ **Security / QA Critic:** Vulnerability scanning, logic verification, and sanity checks.
+- ⚡ **Benchmark Analyst:** Big-O complexity analysis, execution profiling, and latency/memory optimization.
 
-### 🏃 3. Live Kernel Execution & 750px Console
-- **Direct Notebook Execution:** Runs extracted `.py` and `.sh` files inside the active kernel session with full capture of `stdout`, `stderr`, tables, and tracebacks.
-- **Spacious Terminal View:** Expanded 750px full-width dark console.
-- **Instant Debugging Feedback Loop:** Click **"Send Output/Error to AI"** to immediately pipe console stdout/stderr back into the prompt box for rapid troubleshooting.
-- **Clipboard Output:** Dedicated **📋 Copy Console Output** button.
+### 📡 3. Multi-Channel Routing Protocol
+Agent interactions are explicitly categorized and badged in the timeline:
+- `Direct Message` — Targeted 1-on-1 handoff between specialists.
+- `Team Broadcast` — Swarm-wide announcements and architectural updates.
+- `Reflection Loop` — Self-correction and internal validation cycles.
+- `Consensus Gate` — Final gatekeeping check before completing a mission.
 
-### 📋 4. Dual-Header & Code-Level Clipboard Engine
-- **Dual Copy Action Bars:** Every model card features copy buttons at both the **top** and **bottom**, so you never have to scroll past long code blocks.
-- **Granular Block Copy:** Individual `📋 Copy <language> #N` buttons for every detected snippet.
-- **Iframe-Safe JS Bridge:** Kernel-to-browser clipboard bridge that works reliably inside Jupyter/Kaggle iframe sandboxes.
+### 📊 4. Live Reactive SVG Graph Visualizer
+- **Native SVG Rendering:** Real-time visual topology graph rendered directly inside the notebook without external JavaScript dependencies.
+- **Visual Node States:** Glowing status badges indicating node activity (`ACTIVE`, `REVIEWING`, `COMPLETED`, `IDLE`).
+- **Dynamic Edge Weights:** Interactive lines that thicken and scale as messages and code pass between agents.
+- **Topology History Log:** Real-time terminal feed recording every routing decision, channel switch, and agent transition.
 
-### 📎 5. Advanced File Attachments & Context Management
-- Attach workspace files directly from `/kaggle/working/` or upload local files (`.py`, `.js`, `.ts`, `.sh`, `.sql`, `.json`, `.yaml`, `.md`, `.cpp`, `.java`, etc.).
-- Dynamic backtick fence scaling to prevent nested code blocks from corrupting prompts.
-- **Undo Last Turn:** Restores your prompt text and attached files back into the editor with full state preservation.
+### ⚡ 5. Execution Sandbox & 750px Console
+- **Direct Notebook Execution:** Safely runs generated Python (`.py`) and Bash (`.sh`) scripts in the live IPython kernel.
+- **Full Stdout/Stderr Capture:** Full traceback, table, and print capture inside an expansive 750px dark terminal.
+- **Feedback Loop:** Click **"Send Output/Error to AI"** to immediately pipe errors or benchmark logs back into the prompt box.
+- **Clipboard Output:** One-click **📋 Copy Console Output** button.
+
+### 📋 6. Full-Width Cards & Zero-Scroll Timeline
+- **⬇️ Newest First by Default:** Latest answers and agent actions appear right at the top so you never need to scroll down.
+- **Dual Copy Action Bars:** Response cards feature copy buttons at both the **header** and **footer**, allowing one-click copying of full Markdown or individual code snippets (`📋 Copy python #1`).
+- **Iframe-Safe JS Bridge:** Reliable clipboard copying that bypasses Kaggle/Jupyter iframe sandbox constraints.
 
 ---
 
