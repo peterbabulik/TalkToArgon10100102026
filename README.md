@@ -15,8 +15,8 @@ All available models listed below 👇
 ```python
 import urllib.request
 
-# Raw link to ArgonOS v9 Release
-url = "https://raw.githubusercontent.com/TalkToArgon10100102026/blob/1468a953eb64ea720f0e38e182168118f6ea3c41/argon_code_v91.py"
+# Raw link to ArgonOS v9.1 Release
+url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/20ce648437bfc917e797d96f2f93b6ed1903b2fd/argon_code_v91.py"
 filename = "argon_code_v91.py"
 
 # 1. Download the operating system
