@@ -6,7 +6,6 @@ All available models listed below 👇
 
 ---
 
-
 ## 🚀 Quick Start Guide (Single-Cell Install — Recommended)
 
 1. **Verify your Kaggle account:** Complete SMS/phone verification in your Kaggle profile to unlock free model proxy quotas.
@@ -34,9 +33,12 @@ with open(filename, "r", encoding="utf-8") as f:
 
 ---
 
-### 📦 Code Resource: **ArgonOS v9**
-Get the latest standalone Python operating system script:  
-👉 **[ArgonOS v9 (`argon_code_v9.py`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/d375ec394ff8c0cb806543bcff994b78e2f28482/argon_code_v9.py)**
+### 📦 Project Artifacts & Documentation
+
+- 🪟 **[ArgonOS v9 Source (`argon_code_v9.py`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/d375ec394ff8c0cb806543bcff994b78e2f28482/argon_code_v9.py)** — Complete standalone operating system release
+- ⚡ **[ArgonOS Core Foundation (`argonOScore.py`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/1d34bc27ed56409b9556baf317f4b5fda43e57cf/argonOScore.py)** — Initial lightweight micro-kernel prototype
+- 📜 **[Complete Development Log (`DevLog.md`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/1d34bc27ed56409b9556baf317f4b5fda43e57cf/DevLog.md)** — Detailed journey and technical breakdown from v1 through v9
+- 🧬 **[Swarm Mutation Prompt (`PromtForArgonOSmutation.md`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/1d34bc27ed56409b9556baf317f4b5fda43e57cf/PromtForArgonOSmutation.md)** — The exact engineering prompt that drove the autonomous creation of v9
 
 ---
 
@@ -112,40 +114,19 @@ During development, **SuperAgent v7** was tasked with architecting the new **DyT
 > **"Can software write, test, diagnose, and evolve its own operating system without human code typing?"**  
 > **Yes. ArgonOS v9 is the living proof.**
 
-ArgonOS v9 was not coded by hand. It was **architected, written (2,600+ lines of Python, HTML5, CSS3, and JavaScript), executed, diagnosed via a Reflection Loop, and in-place patched autonomously by the AI Swarm itself** running directly inside a Kaggle mobile browser session in under **5 minutes**:
+ArgonOS v9 was not coded by hand. It was **architected, written (3,000+ lines of Python, HTML5, CSS3, and JavaScript), executed, diagnosed via a Reflection Loop, and in-place patched autonomously by the AI Swarm itself** running directly inside a Kaggle mobile browser session in under **5 minutes**:
 
 1. **Autonomous Conception:** Guided only by a high-level goal, the **Lead Architect (Gemini-4-Argon)** structured a 5-application micro-kernel OS.
-2. **First-Pass Generation:** The **Specialist Coder** generated the initial 2,600-line codebase (`argon_code_v9.py`) via `%%writefile`.
+2. **First-Pass Generation:** The **Specialist Coder** generated the initial codebase (`argon_code_v9.py`) via `%%writefile`.
 3. **Automated Sandbox Execution:** The **Sandbox Executor** ran the code inside the live IPython kernel, catching an initial `AttributeError` at runtime.
 4. **Self-Healing Reflection Loop:** Instead of failing, the Architect opened a cognitive `Reflection Loop`, conducted an automated root-cause analysis on the traceback, and dispatched an in-place patch to the Coder.
 5. **Verified Boot:** Within 4 minutes and 33 seconds, the swarm hot-patched its own source file, re-tested it, and reported:  
    `ARGON_OS_V9_BOOT: PASS | Registered Apps: ['console', 'editor', 'files', 'sysinfo', 'talk'] | Touch Drag Engine: ACTIVE`
-(I developed argonOScore.py in separate discussion in about 20 minutes, 4 minutes and 33 seconds, was time to upgrade source code of app from version v8, to version v9. to "mutate" argonOScore with argon_code_v8.py, with prompt from that separate discussion (stored here, on GitHub), and swarm developed v9 in 4 minutes and 33 seconds)
 
-## try it yourself 
+> 💡 **Behind the Build:**  
+> The foundational window engine [`argonOScore.py`](https://github.com/peterbabulik/TalkToArgon10100102026/blob/1d34bc27ed56409b9556baf317f4b5fda43e57cf/argonOScore.py) was drafted in ~20 minutes. The **4 minutes and 33 seconds** was the autonomous runtime required for the DyTopo Swarm to "mutate" and merge `argonOScore.py` with `argon_code_v8.py` into the full operating system using the prompt saved in [`PromtForArgonOSmutation.md`](https://github.com/peterbabulik/TalkToArgon10100102026/blob/1d34bc27ed56409b9556baf317f4b5fda43e57cf/PromtForArgonOSmutation.md). Read the complete retrospective in the [📜 Full DevLog (v1 ➔ v9)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/1d34bc27ed56409b9556baf317f4b5fda43e57cf/DevLog.md).
 
-1. **Verify your Kaggle account:** Complete SMS/phone verification in your Kaggle profile to unlock free model proxy quotas.
-2. **Open a Task Environment:** Visit [kaggle.com/benchmarks/tasks/new](https://www.kaggle.com/benchmarks/tasks/new) to spin up an environment with injected model proxy access.
-3. **Load ArgonOS v9 (`argon_code_v9.py`):** Paste and run the snippet below in a notebook cell. It will download the verified v9 release and automatically populate the next cell with the complete operating system:
-
-```python
-import urllib.request
-
-# Raw link to ArgonOS v9 Release
-url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/d375ec394ff8c0cb806543bcff994b78e2f28482/argon_code_v9.py"
-filename = "argon_code_v9.py"
-
-# 1. Download the operating system
-urllib.request.urlretrieve(url, filename)
-print(f"File {filename} downloaded successfully.")
-
-# 2. Automatically load the code into the next cell
-with open(filename, "r", encoding="utf-8") as f:
-    get_ipython().set_next_input(f.read())
-```
-
-4. **Run the populated cell** (or run `%run argon_code_v9.py`) to boot **ArgonOS v9**.
-5. **Multi-Task & Iterate:** Tap window headers to drag, click `□` to maximize any window to full screen, launch swarms, edit files, and execute live scripts.
+---
 
 ## 📋 Available Frontier & Open Models in Kaggle Model Proxy
 
