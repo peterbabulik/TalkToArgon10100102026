@@ -17,7 +17,7 @@ import urllib.request
 
 # Raw link to ArgonOS v9 Release
 url = "https://raw.githubusercontent.com/TalkToArgon10100102026/blob/1468a953eb64ea720f0e38e182168118f6ea3c41/argon_code_v91.py"
-filename = "argon_code_v9.py"
+filename = "argon_code_v91.py"
 
 # 1. Download the operating system
 urllib.request.urlretrieve(url, filename)
