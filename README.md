@@ -120,9 +120,32 @@ ArgonOS v9 was not coded by hand. It was **architected, written (2,600+ lines of
 4. **Self-Healing Reflection Loop:** Instead of failing, the Architect opened a cognitive `Reflection Loop`, conducted an automated root-cause analysis on the traceback, and dispatched an in-place patch to the Coder.
 5. **Verified Boot:** Within 4 minutes and 33 seconds, the swarm hot-patched its own source file, re-tested it, and reported:  
    `ARGON_OS_V9_BOOT: PASS | Registered Apps: ['console', 'editor', 'files', 'sysinfo', 'talk'] | Touch Drag Engine: ACTIVE`
+(I developed argonOScore.py in separate discussion in about 20 minutes, 4 minutes and 33 seconds, was time to upgrade source code of app from version v8, to version v9. to "mutate" argonOScore with argon_code_v8.py, with prompt from that separate discussion (stored here, on GitHub), and swarm developed v9 in 4 minutes and 33 seconds)
 
 ## try it yourself 
 
+1. **Verify your Kaggle account:** Complete SMS/phone verification in your Kaggle profile to unlock free model proxy quotas.
+2. **Open a Task Environment:** Visit [kaggle.com/benchmarks/tasks/new](https://www.kaggle.com/benchmarks/tasks/new) to spin up an environment with injected model proxy access.
+3. **Load ArgonOS v9 (`argon_code_v9.py`):** Paste and run the snippet below in a notebook cell. It will download the verified v9 release and automatically populate the next cell with the complete operating system:
+
+```python
+import urllib.request
+
+# Raw link to ArgonOS v9 Release
+url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/d375ec394ff8c0cb806543bcff994b78e2f28482/argon_code_v9.py"
+filename = "argon_code_v9.py"
+
+# 1. Download the operating system
+urllib.request.urlretrieve(url, filename)
+print(f"File {filename} downloaded successfully.")
+
+# 2. Automatically load the code into the next cell
+with open(filename, "r", encoding="utf-8") as f:
+    get_ipython().set_next_input(f.read())
+```
+
+4. **Run the populated cell** (or run `%run argon_code_v9.py`) to boot **ArgonOS v9**.
+5. **Multi-Task & Iterate:** Tap window headers to drag, click `□` to maximize any window to full screen, launch swarms, edit files, and execute live scripts.
 
 ## 📋 Available Frontier & Open Models in Kaggle Model Proxy
 
