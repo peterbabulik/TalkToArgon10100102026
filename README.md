@@ -15,17 +15,19 @@ All available models listed below 👇
 ```python
 import urllib.request
 
-# Raw link to ArgonOS v9.2 Release
+# Raw link to ArgonOS release
 url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/4e6e15beb97e246fb331ac6c8dc97b3be56c7832/argon_code_92.py"
-filename = "argon_code_92.py"
 
-# 1. Download the operating system
-urllib.request.urlretrieve(url, filename)
-print(f"File {filename} downloaded successfully.")
+# 1. Fetch directly into RAM (zero disk footprint)
+with urllib.request.urlopen(url) as response:
+    code = response.read().decode("utf-8")
 
-# 2. Automatically load the code into the next cell
-with open(filename, "r", encoding="utf-8") as f:
-    get_ipython().set_next_input(f.read())
+print(
+    "✓ Code loaded directly into memory. Workspace (/kaggle/working) remains 100% clean!"
+)
+
+# 2. Automatically populate the next cell with the code
+get_ipython().set_next_input(code)
 ```
 
 4. **Run the populated cell** (or run `%run argon_code_v9.py`) to boot **ArgonOS v9**.
