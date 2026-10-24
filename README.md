@@ -10,15 +10,15 @@ All available models listed below 👇
 
 1. **Verify your Kaggle account:** Complete SMS/phone verification in your Kaggle profile to unlock free model proxy quotas.
 2. **Open a Task Environment:** Visit [kaggle.com/benchmarks/tasks/new](https://www.kaggle.com/benchmarks/tasks/new) to spin up an environment with injected model proxy access.
-3. **Load ArgonOS v9 (`argon_code_v9.py`):** Paste and run the snippet below in a notebook cell. It will download the verified v9 release and automatically populate the next cell with the complete operating system:
+3. **Load ArgonOS v9 (`argon_code_xx.py`):** Paste and run the snippet below in a notebook cell. It will download the verified v9 release and automatically populate the next cell with the complete operating system:
 
 ```python
 import urllib.request
 
-# Raw link to ArgonOS release
-url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/4e6e15beb97e246fb331ac6c8dc97b3be56c7832/argon_code_92.py"
+# Raw link to ArgonOS v9.3 Release
+url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/2eb45c1262e026694d47f036075864d1ee151f39/argon_code_93.py"
 
-# 1. Fetch directly into RAM (zero disk footprint)
+# 1. Fetch directly into RAM (zero disk footprint to keep workspace clean)
 with urllib.request.urlopen(url) as response:
     code = response.read().decode("utf-8")
 
@@ -30,7 +30,7 @@ print(
 get_ipython().set_next_input(code)
 ```
 
-4. **Run the populated cell** (or run `%run argon_code_v9.py`) to boot **ArgonOS v9**.
+4. **Run the populated cell** to boot **ArgonOS v9**.
 5. **Multi-Task & Iterate:** Tap window headers to drag, click `□` to maximize any window to full screen, launch swarms, edit files, and execute live scripts.
 
 ---
