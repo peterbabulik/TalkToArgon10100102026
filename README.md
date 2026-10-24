@@ -15,8 +15,8 @@ All available models listed below 👇
 ```python
 import urllib.request
 
-# Raw link to ArgonOS v9.3 Release
-url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/2eb45c1262e026694d47f036075864d1ee151f39/argon_code_93.py"
+# Raw link to ArgonOS v9.7 Release
+url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/90ceb4a51b97128cdb03ec49d5705639a3a05b41/argon_code_97.py"
 
 # 1. Fetch directly into RAM (zero disk footprint to keep workspace clean)
 with urllib.request.urlopen(url) as response:
