@@ -122,6 +122,176 @@ v9: ArgonOS (Multi-Window Touch Desktop, In-Place Self-Healing)
 
 ---
 
+
+Here is the continuation for your **`DevLog.md`**, chronicling the journey from **v9 up to v9.7**, with special emphasis on the **Surgical Diff Engine** as the pivotal breakthrough that restored autonomous self-evolution:
+
+---
+
+
+
+## [v9.0] — The ArgonOS Desktop Micro-Kernel & Multi-Window Platform
+**Theme:** *Bridging the Web & Kernel Gap via DOM Portals*
+
+### Overview
+With v9.0, the project graduated from a linear terminal workbench into a full-fledged, mobile-touch, multi-window desktop operating system running directly inside an isolated cloud notebook container (Kaggle/Jupyter).
+
+### Key Architectural Milestones
+* **DOM Portal Engine:** Designed a dynamic reparenting engine (`setInterval` + `appendChild`) that mounts live Python `ipywidgets` into floating HTML5/CSS3 desktop window containers.
+* **Mobile-Touch Pointer Engine:** Replaced fragile mouse handlers with hardware-safe HTML Pointer Events (`setPointerCapture`), enabling smooth drag-and-drop and resizing on touch devices without triggering browser viewport scrolling.
+* **Core Application Suite:**
+  1. `talk` — TalkToArgon & DyTopo Swarm Studio.
+  2. `files` — Workspace File Explorer (`/kaggle/working`).
+  3. `editor` — Monospace Code Editor & IDE.
+  4. `console` — Execution Terminal & Output Logger.
+  5. `sysinfo` — BIOS Telemetry and LLM Context Manager.
+* **Visual Telemetry:** Integrated a GPU-accelerated perimeter RGB neon lighting strip driven via an unbuffered SVG/JavaScript bridge (`_js_bridge`).
+
+---
+
+## [The Crisis] — The 3,000+ LOC Ceiling & Loss of Autonomous Self-Evolution
+**Theme:** *The Monolithic Output Token Wall*
+
+### The Problem
+Through versions v2 through v8, Argon developed itself—culminating in the v8 *Inception Event* where the system wrote and booted its next iteration from within its own sandbox. However, by v9, the single-file codebase ballooned beyond **3,000 lines of code (LOC)**.
+
+This created a hard roadblock:
+1. **Output Token Limits:** While frontier LLMs (Gemini, Claude) have large input context windows, their maximum generation output per turn is strictly capped at 4k–8k tokens. 
+2. A 3,000+ LOC file containing rich HTML, CSS, JavaScript, and Python exceeds this budget in a single completion.
+3. The model could no longer regenerate the entire file with `%%writefile`. It frequently truncated midway, hallucinated missing functions, or crashed.
+
+### The Retreat to External Tooling
+For two days, the autonomous self-hosting loop was broken. Maintenance had to be offloaded externally to VS Code and Kilo Code to manually perform code diffs and surgical edits. ArgonOS had lost its ability to update itself.
+
+---
+
+## [v9.2 – v9.3] — Ring-3 Process Sandboxing & Async Swarm Concurrency
+**Theme:** *Hardening Kernel Safety and UI Responsiveness*
+
+Before self-evolution could be restored, two foundational architectural vulnerabilities had to be eliminated:
+
+1. **Vulnerability: In-Process Execution & Namespace Pollution**
+   * *Old Behavior:* `execute_file()` ran scripts directly in host memory via `ipython.run_cell(code)`. A rogue script could rebind `UID = 0`, clear `sys.modules`, or trigger infinite loops that permanently crashed the Jupyter session.
+   * *Resolution (v9.3):* Migrated execution to **Ring-3 Subprocess Isolation** (`subprocess.Popen([sys.executable, ...])`) with controlled environment sanitization and strict execution timeouts (default 120s).
+
+2. **Bottleneck: Main Event Loop Starvation**
+   * *Old Behavior:* The multi-step Swarm loop ran synchronously inside the `ipywidgets` click callback, holding the GIL and blocking the Tornado I/O loop. The browser UI froze, and the "Stop" button could not register clicks.
+   * *Resolution (v9.3):* Decoupled Swarm orchestration into a background daemon thread (`threading.Thread(target=self._run_swarm_worker, daemon=True)`). WebSocket keep-alives and UI interactions remained 100% fluid.
+
+---
+
+## [v9.4] — Hard Preemption via POSIX Process Groups
+**Theme:** *Sub-100ms Cooperative & Forced Interruption*
+
+### The Breakthrough
+In v9.3, clicking "Stop Swarm" while a child script was running blocked for up to 120s waiting on `proc.communicate()`. Furthermore, orphan child processes persisted in memory.
+
+* **Process Group Isolation:** Configured `subprocess.Popen(..., start_new_session=True)` so that child scripts spawn in their own POSIX process group (`PGID == PID`).
+* **Active Process Pointer:** Exposed `self._active_proc` to the kernel instance.
+* **Instant Cancellation:** When the operator clicks **Stop Swarm**, `on_stop_agent_clicked` issues an immediate `os.killpg(pgid, signal.SIGKILL)`. Runaway processes and all descendants are terminated in **< 100ms**, releasing memory and unblocking the worker thread instantly.
+
+---
+
+## [v9.5] — The Native Surgical Diff Engine: Restoring Autonomous Self-Evolution
+**Theme:** *The Turning Point — Re-Enabling the Inception Loop*
+
+```
+                     ┌───────────────────────────────────────────────┐
+                     │          THE 3,000+ LOC TOKEN WALL            │
+                     │  (LLM Output Budget: ~4,000 Tokens Max)       │
+                     └──────────────────────┬────────────────────────┘
+                                            │
+       ❌ Full Rewrite (%%writefile)        │       ✅ Surgical Diff (%%patch)
+       3,000 lines = ~12,000 tokens         │       Hunk Delta = ~150 tokens
+       [TRUNCATED / TOKEN OVERFLOW]         │       [APPLIED CLEANLY IN < 2s]
+                                            ▼
+                     ┌───────────────────────────────────────────────┐
+                     │           ARGONOS SELF-HEALING &              │
+                     │       AUTONOMOUS EVOLUTION RESTORED           │
+                     └───────────────────────────────────────────────┘
+```
+
+### The Architectural Turning Point
+To eliminate the 3,000 LOC ceiling without restructuring into multi-file modules, ArgonOS v9.5 introduced a native **Surgical Diff Engine** inspired by agentic software tools (Aider, Cursor).
+
+Instead of forcing the LLM to rewrite the entire monolithic file, Swarm agents were instructed to emit localized diff hunks using the `%%patch` command:
+
+```text
+%%patch filename.py
+<<<<<<< SEARCH
+# Exact existing lines of code to replace
+=======
+# New replacement lines of code
+>>>>>>> REPLACE
+```
+
+### Engine Mechanics (`apply_patch`)
+1. **Multi-Stage Resilient Matching:**
+   * *Stage 1 (Exact Match):* Searches for direct substring matches in target content.
+   * *Stage 2 (Line-Normalized Match):* Falls back to CRLF/LF normalization and trailing whitespace stripping to prevent formatting mismatches.
+2. **Transaction Rollback:** If any hunk in a patch transaction fails, the engine aborts the write, restores the target from an in-memory backup, and returns a detailed failure report to the agent.
+3. **Delta Telemetry:** Reports applied hunks and line diff metrics (`+added / -removed`) directly to Swarm memory and console logs.
+
+> **Significance:** With the introduction of `apply_patch`, **ArgonOS regained the ability to autonomously update and evolve its own codebase.** A 15-line architectural upgrade now consumes only ~150 tokens instead of exhausting the 8,000-token ceiling.
+
+---
+
+## [v9.5.1] — The Autonomous Self-Upgrade
+**Theme:** *Test-Driven Self-Evolution without External Intervention*
+
+Immediately upon deploying the diff engine, ArgonOS was prompted to inspect its environment and implement 3 new capabilities. Operating purely within its own loop, the Swarm autonomously patched the kernel with:
+
+1. **`search_workspace(query, case_sensitive)`:** A pure-Python full-text grep engine searching non-hidden files with exact line-number indexing.
+2. **`create_workspace_snapshot(snapshot_name)`:** An automated ZIP archiver with self-exclusion logic (`p.suffix != ".zip"` and `p != archive_path`) to prevent recursive zip bombs, protecting user work against Kaggle idle-session wipes.
+3. **`export_markdown_report(filename)`:** An automated audit generator synthesizing BIOS telemetry, DyTopo graph transitions, and conversation histories into portable Markdown documentation.
+4. **Self-Extending Boot Integrity:** The Swarm patched its own `verify_kernel_integrity()` self-test, writing a canary probe file (`ArgonOS_Kernel_Verification_Token_99`), asserting that search, backup, and reporting passed validation before declaring boot success.
+
+---
+
+## [v9.7] — Full GUI Integration & Headless E2E Self-Testing
+**Theme:** *From Kernel APIs to Interactive Desktop Experience*
+
+Version 9.7 exposed the autonomous backend capabilities directly to the user interface:
+
+### 1. Client-Side Browser Downloads (`⬇️ DL` Button)
+* **The Challenge:** Kaggle instances sit behind reverse proxies with no direct inbound ports or public download links.
+* **The Solution:** Added a `⬇️ DL` button to every row in the File Explorer. It reads file bytes, encodes them into an in-memory **Base64 Data URI**, injects an ephemeral anchor element into the DOM, and clicks it programmatically. Large files and `.zip` snapshots are pulled directly to the user's local machine with one touch.
+
+### 2. "Find in Files" IDE Search Toolbar
+* Added an interactive search toolbar to the **Argon Code Editor**:
+  * Input query box + `🔍 Search` button.
+  * Populates a dynamic dropdown with matching occurrences (`filename:line | snippet`).
+  * Selecting a match automatically triggers `open_file_in_editor()` and jumps to the exact line.
+
+### 3. Headless UI Simulation in Boot Diagnostics
+The Swarm updated `verify_kernel_integrity()` to programmatically simulate user interactions:
+```python
+# Programmatically simulate user search and selection in UI
+self.editor_search_input.value = "ArgonOS_Kernel_Verification_Token_99"
+self._on_editor_search_clicked(None)
+assert len(self.editor_search_results.options) > 1
+
+first_match = self.editor_search_results.options[1][1]
+self._on_search_result_selected({"new": first_match})
+assert "ArgonOS_Kernel_Verification_Token_99" in self.editor_textarea.value
+```
+
+---
+
+## Current Architecture Summary (v9.7)
+
+| Layer | Implementation |
+| :--- | :--- |
+| **Interface** | HTML5 / CSS3 floating multi-window system with pointer event capture & DOM portal mounting |
+| **Concurrency** | Non-blocking daemon threads (`threading.Thread`) preserving Jupyter Tornado I/O loop |
+| **Sandboxing** | Ring-3 isolated subprocesses (`subprocess.Popen`) with dedicated process groups (`PGID`) |
+| **Preemption** | Hardware-safe sub-100ms `SIGKILL` tree termination on user interrupt |
+| **Self-Evolution** | Resilient Search/Replace Surgical Diff Engine (`%%patch`) bypassing LLM generation limits |
+| **Persistence** | Ephemeral ZIP snapshot compression + Base64 browser-direct downloads |
+| **Quality Gate** | Headless End-to-End (E2E) automated self-tests running at every boot |
+
+**Next Frontier:** Multi-tab file editing, token streaming over WebSocket comms, and autonomous benchmark evaluation pipelines.
+
+
 ## 📊 Evolution Matrix
 
 | Version | Architecture Paradigm | Primary Interface | Key Innovation | Lines of Code |
