@@ -307,6 +307,6 @@ assert "ArgonOS_Kernel_Verification_Token_99" in self.editor_textarea.value
 
 ## 🏆 Key Milestones
 
-1. **Zero-PC Development:** 100% of the architecture, coding, debugging, and deployment was executed from a mobile smartphone browser.
-2. **True In-Place Self-Mutation:** The software caught its own runtime errors, reasoned about them via a cognitive reflection loop, and atomically hot-patched its own source code on disk.
-3. **From Tool to Platform:** Began as a workaround for mobile copy-paste limits; culminated in an autonomous, touch-native operating system turning Kaggle into a personal cloud workstation.
+1. **Zero-PC Development:** 100% of the architecture, coding, debugging, and deployment was executed from a mobile smartphone browser. Not true for version 9.0 to 9.5 (surgical diff (SD) implemented) where kilo code was needed to implement SD.
+3. **True In-Place Self-Mutation:** The software caught its own runtime errors, reasoned about them via a cognitive reflection loop, and atomically hot-patched its own source code on disk.
+4. **From Tool to Platform:** Began as a workaround for mobile copy-paste limits; culminated in an autonomous, touch-native operating system turning Kaggle into a personal cloud workstation.
