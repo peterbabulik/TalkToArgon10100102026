@@ -1,4 +1,5 @@
 # 🔬 Autonomous Swarm Experiments & Scientific Discovery Lab
+# Execution of all experiments inside kaggle notebook 🤯🤯🤯
 
 [![ArgonOS](https://img.shields.io/badge/Substrate-ArgonOS%20v9-blue.svg)](https://github.com/peterbabulik/TalkToArgon10100102026)
 [![DyTopo Engine](https://img.shields.io/badge/Swarm%20Topology-Adaptive%20DyTopo-6366f1.svg)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/main/DevLog.md)
