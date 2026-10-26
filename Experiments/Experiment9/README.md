@@ -7,7 +7,7 @@
 
 An architectural evolution of the **ArgonOS v9.8** micro-kernel introducing native **Software Self-Update capabilities**: Just-In-Time (JIT) shebang dependency management and directive-driven adaptive execution timeouts. 
 
-Tested and verified via a rigorous 5-part automated regression suite (`test_v98_features.py`), ArgonOS can now autonomously inspect generated script headers, resolve and install missing pip requirements on the fly, and dynamically scale its execution watchdog limits for heavy artificial intelligence and deep learning workloads.
+Tested and verified via a rigorous 5-part automated regression suite (Experiment 10`test_v98_features.py`), ArgonOS can now autonomously inspect generated script headers, resolve and install missing pip requirements on the fly, and dynamically scale its execution watchdog limits for heavy artificial intelligence and deep learning workloads.
 
 ---
 
