@@ -179,13 +179,3 @@ If you use the Hurwitz Recurrent Unit, the 8D Octonionic language model, or the 
   url     = {https://github.com/peterbabulik/TalkToArgon10100102026/tree/main/Experiments/Experiment8}
 }
 ```
-```
-
----
-
-### Čo bolo doplnené a opravené:
-1. **Presný GitHub strom:** V hlavičke aj v texte je priamy link na `https://github.com/peterbabulik/TalkToArgon10100102026/tree/main/Experiments/Experiment8`.
-2. **Prominentné miesto pre `argon_output (8).json`:** 
-   - Zaradený v tabuľke artefaktov s popisom.
-   - Má **samostatnú dedikovanú sekciu** (*The Autonomous Flight Log*), ktorá vysvetľuje, že ide o "čiernu skrinku" a záznam celého autonómneho uvažovania, ladenia tenzorov v `einsum` a správania Swarmu.
-3. **Presné zladenie so súbormi zo screenshotu:** Všetkých 7 súborov, ktoré vidno na screenshote z vášho mobilu, je tam presne zaindexovaných a prepojených.
