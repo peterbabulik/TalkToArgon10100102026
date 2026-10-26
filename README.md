@@ -54,11 +54,21 @@
 **3.** Open the desktop link printed in the output. The ArgonOS window manager, taskbar and five core apps are ready.
 
 ```python
-# ArgonOS v9.8 - single-cell install & boot (Kaggle / Jupyter)
 import urllib.request
-URL = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/main/argon_code_98.py"
-urllib.request.urlretrieve(URL, "argon_code_98.py")
-exec(open("argon_code_98.py", encoding="utf-8").read(), globals())
+
+# Raw link to ArgonOS v9.8 Release
+url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/9ce99515e7972e11980f9fabcf17ba49d2b62c5e/argon_code_98.py"
+
+# 1. Fetch directly into RAM (zero disk footprint to keep workspace clean)
+with urllib.request.urlopen(url) as response:
+    code = response.read().decode("utf-8")
+
+print(
+    "✓ Code loaded directly into memory. Workspace (/kaggle/working) remains 100% clean!"
+)
+
+# 2. Automatically populate the next cell with the code
+get_ipython().set_next_input(code)
 ```
 
 Prefer to work from a full clone (kernels, notebooks and experiments)?
