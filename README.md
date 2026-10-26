@@ -49,9 +49,12 @@
 
 > Why pay **\$99 USD / \$100 USD** a month for an AI coding agent? ArgonOS v9.8 gives you a full multi-agent AI desktop OS - free - inside one Kaggle notebook cell.
 
-**1.** Open a new [Kaggle Notebook](https://www.kaggle.com/code) and enable **Internet** in the settings panel.
-**2.** Paste the single cell below and run it. It downloads and boots the **v9.8 Release** kernel, `argon_code_98.py`.
-**3.** Open the desktop link printed in the output. The ArgonOS window manager, taskbar and five core apps are ready.
+
+## 🚀 Quick Start Guide (Single-Cell Install — Recommended)
+
+1. **Verify your Kaggle account:** Complete SMS/phone verification in your Kaggle profile to unlock free model proxy quotas.
+2. **Open a Task Environment:** Visit [kaggle.com/benchmarks/tasks/new](https://www.kaggle.com/benchmarks/tasks/new) to spin up an environment with injected model proxy access.
+3. **Load ArgonOS v9 (`argon_code_xx.py`):** Paste and run the snippet below in a notebook cell. It will download the verified v9 release and automatically populate the next cell with the complete operating system:
 
 ```python
 import urllib.request
