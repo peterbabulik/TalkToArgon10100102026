@@ -1,136 +1,329 @@
-# TalkToArgon10100102026 🤖⚡ (ArgonOS v9 Edition)
-
-Google wants 99 USD to talk to argon,  
-Kaggle gives you 100 USD to talk to argon (and other models)  
-All available models listed below 👇
-
----
-
-## 🚀 Quick Start Guide (Single-Cell Install — Recommended)
-
-1. **Verify your Kaggle account:** Complete SMS/phone verification in your Kaggle profile to unlock free model proxy quotas.
-2. **Open a Task Environment:** Visit [kaggle.com/benchmarks/tasks/new](https://www.kaggle.com/benchmarks/tasks/new) to spin up an environment with injected model proxy access.
-3. **Load ArgonOS v9 (`argon_code_xx.py`):** Paste and run the snippet below in a notebook cell. It will download the verified v9 release and automatically populate the next cell with the complete operating system:
-
-```python
-import urllib.request
-
-# Raw link to ArgonOS v9.8 Release
-url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/9ce99515e7972e11980f9fabcf17ba49d2b62c5e/argon_code_98.py"
-
-# 1. Fetch directly into RAM (zero disk footprint to keep workspace clean)
-with urllib.request.urlopen(url) as response:
-    code = response.read().decode("utf-8")
-
-print(
-    "✓ Code loaded directly into memory. Workspace (/kaggle/working) remains 100% clean!"
-)
-
-# 2. Automatically populate the next cell with the code
-get_ipython().set_next_input(code)
-```
-
-4. **Run the populated cell** to boot **ArgonOS v9**.
-5. **Multi-Task & Iterate:** Tap window headers to drag, click `□` to maximize any window to full screen, launch swarms, edit files, and execute live scripts.
-
----
-
-### 📦 Project Artifacts & Documentation
-
-- 🪟 **[ArgonOS v9 Source (`argon_code_97.py`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/ea33ee5fb4b02e6c7eddc77c58287c2dada4d070/argon_code_97.py)** — Complete standalone operating system release
-- ⚡ **[ArgonOS Core Foundation (`argonOScore.py`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/1d34bc27ed56409b9556baf317f4b5fda43e57cf/argonOScore.py)** — Initial lightweight micro-kernel prototype
-- 📜 **[Complete Development Log (`DevLog.md`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/1d34bc27ed56409b9556baf317f4b5fda43e57cf/DevLog.md)** — Detailed journey and technical breakdown from v1 through v9
-- 🧬 **[Swarm Mutation Prompt (`PromtForArgonOSmutation.md`)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/1d34bc27ed56409b9556baf317f4b5fda43e57cf/PromtForArgonOSmutation.md)** — The exact engineering prompt that drove the autonomous creation of v9
-
----
-
-## ⚡ What's New in ArgonOS v9
-
-Version 9 transforms the linear notebook into a **Touch-Native Multi-Window Desktop Operating System (Cloud Workstation)** built specifically for mobile and desktop screens alike:
-
-### 🪟 1. Micro-Kernel Window Manager Engine
-- **Touch-First Pointer Dragging:** Built with unified Pointer Events (`setPointerCapture`) so you can drag windows seamlessly on your smartphone without triggering page scroll.
-- **Tap-to-Focus Layering:** Tapping any window instantly brings it to the top of the Z-stack with an active cyan neon border.
-- **Per-Window Maximize & Resize:** Every window features a `□` / `🗗` maximize toggle that expands to fill the entire desktop, plus a touch-friendly bottom-right corner resize grip.
-- **Hardware Fullscreen F11 Mode:** Tap `⛶ Fullscreen` to expand the entire desktop to 100vw × 100vh, eliminating browser address bars and turning your phone into a native workstation.
-- **GPU-Accelerated RGB LED Perimeter Glow:** An ambient neon light strip runs around the screen perimeter, automatically pulsing and sweeping colors while models are thinking or scripts are executing.
-
-### 📱 2. Three-Section Mobile Taskbar
-- **Left:** System Telemetry Monitor displaying real-time hardware status (`🟢 ARGON-OS v9`, `🧠 RAM: 1.3/31.3 GB`, `💾 Quota`).
-- **Center:** One-tap `⛶ Fullscreen` / `🗗 Exit` toggle.
-- **Right:** Dynamic Application Launcher Dock (`🤖 TALK`, `📁 FILES`, `✏️ EDITOR`, `⚡ CONSOLE`, `⚙️ BIOS`).
-
-### 📦 3. Five Pre-Installed Native Core Applications
-
-#### 🤖 1. TalkToArgon & DyTopo Swarm Studio
-- Direct prompt access to Google Gemini 4 Argon, Claude Opus, GPT-6, DeepSeek, and Qwen.
-- Full DyTopo interaction topology modes (**Adaptive**, **Star**, **Chain**, **Peer Debate**, **Hierarchical Tree**).
-- Reactive SVG interaction graph, specialist role delegation, and reverse conversation timeline (newest answers at top).
-
-#### 📁 2. Argon Files Explorer
-- Real-time filesystem scanner for `/kaggle/working/` showing file size chips, extensions, and modification timestamps.
-- One-click actions on every file: `✏️ Edit`, `▶️ Run`, `📋 Copy Code`, `👁️ Info`.
-
-#### ✏️ 3. Argon Code Editor (Mobile IDE)
-- Dark-themed monospace code editor designed for touch editing on phones.
-- Load any workspace script, edit lines with mobile virtual keyboards, and click `💾 Save File` to write changes directly back to disk.
-
-#### ⚡ 4. Sandbox Console & Execution Terminal
-- Live execution engine for `.py` (via IPython `%run`) and `.sh` (via bash) capturing stdout, stderr, and tracebacks.
-- Instant debugging feedback: click `↩️ Send Error/Output to AI` to pipe tracebacks back to the swarm for immediate fixes.
-
-#### ⚙️ 5. System Settings & BIOS Telemetry
-- Controls for LLM sampling temperature and context memory turns.
-- Manual toggle switch for the RGB LED perimeter lighting effect (`⚡ LED FX: ON / OFF`).
-
----
-
-## 🕳️🐇 Easter Egg: The Matrix Inception (v8 inside v7)
-
-> *"Unfortunately, no one can be told what the Matrix is. You have to see it for yourself."*
-
-During development, **SuperAgent v7** was tasked with architecting the new **DyTopo v8 engine**. In a true recursive self-bootstrapping loop, the v7 agent:
-1. Designed and wrote the full `argon_code_v8.py` module using `%%writefile`.
-2. Automatically executed `argon_code_v8.py` directly inside its live IPython sandbox.
-3. **Booted the entire graphical v8 DyTopo Workbench with its live SVG graph inside v7's own execution console!** 🤯
-
+<!-- README generated by generate_readme.py (ArgonOS v9.8) -->
 <div align="center">
 
-### 🎬 Live Demo: Recursive Agent Inception
+# 🌌 TalkToArgon — ArgonOS v9.8
 
-<!-- Embedded Video Tag -->
-<video src="https://github.com/peterbabulik/TalkToArgon10100102026/raw/main/screen-20261021-194415~2.mp4" controls width="100%" style="max-width: 680px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);"></video>
+**A self-evolving, browser-native AI operating system and multi-agent swarm laboratory that boots inside a single Kaggle notebook cell.**
 
-<br>
+![Release](https://img.shields.io/badge/release-v9.8-7c3aed)
+![Python](https://img.shields.io/badge/python-3.10%2B-3776ab)
+![Platform](https://img.shields.io/badge/platform-Kaggle%20%7C%20Jupyter-20beff)
+![Tests](https://img.shields.io/badge/self--tests-5%2F5%20PASS-success)
+![Experiments](https://img.shields.io/badge/experiments-7%20%E2%86%92%2010-orange)
 
-👉 **[🎥 Click here to watch the full MP4 demo (screen-20261021-194415~2.mp4)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/main/screen-20261021-194415~2.mp4)**
-
-*Agent v7 giving birth to and executing Agent v8 in real-time inside the live kernel sandbox.*
+[Quick Start](#-quick-start-guide) · [What's New](#-whats-new-in-argonos-v98) · [Experiments](#-autonomous-swarm-experiments--scientific-discovery-lab-experiments) · [Models](#-available-frontier--open-models-kaggle-model-proxy) · [Citation](#-citation)
 
 </div>
 
----
-
-## 🧬 A Software Developed "By Itself" (Autonomous Self-Bootstrapping)
-
-> **"Can software write, test, diagnose, and evolve its own operating system without human code typing?"**  
-> **Yes. ArgonOS v9 is the living proof.**
-
-ArgonOS v9 was not coded by hand. It was **architected, written (3,000+ lines of Python, HTML5, CSS3, and JavaScript), executed, diagnosed via a Reflection Loop, and in-place patched autonomously by the AI Swarm itself** running directly inside a Kaggle mobile browser session in under **5 minutes**:
-
-1. **Autonomous Conception:** Guided only by a high-level goal, the **Lead Architect (Gemini-4-Argon)** structured a 5-application micro-kernel OS.
-2. **First-Pass Generation:** The **Specialist Coder** generated the initial codebase (`argon_code_v9.py`) via `%%writefile`.
-3. **Automated Sandbox Execution:** The **Sandbox Executor** ran the code inside the live IPython kernel, catching an initial `AttributeError` at runtime.
-4. **Self-Healing Reflection Loop:** Instead of failing, the Architect opened a cognitive `Reflection Loop`, conducted an automated root-cause analysis on the traceback, and dispatched an in-place patch to the Coder.
-5. **Verified Boot:** Within 4 minutes and 33 seconds, the swarm hot-patched its own source file, re-tested it, and reported:  
-   `ARGON_OS_V9_BOOT: PASS | Registered Apps: ['console', 'editor', 'files', 'sysinfo', 'talk'] | Touch Drag Engine: ACTIVE`
-
-> 💡 **Behind the Build:**  
-> The foundational window engine [`argonOScore.py`](https://github.com/peterbabulik/TalkToArgon10100102026/blob/1d34bc27ed56409b9556baf317f4b5fda43e57cf/argonOScore.py) was drafted in ~20 minutes. The **4 minutes and 33 seconds** was the autonomous runtime required for the DyTopo Swarm to "mutate" and merge `argonOScore.py` with `argon_code_v8.py` into the full operating system using the prompt saved in [`PromtForArgonOSmutation.md`](https://github.com/peterbabulik/TalkToArgon10100102026/blob/1d34bc27ed56409b9556baf317f4b5fda43e57cf/PromtForArgonOSmutation.md). Read the complete retrospective in the [📜 Full DevLog (v1 ➔ v9)](https://github.com/peterbabulik/TalkToArgon10100102026/blob/1d34bc27ed56409b9556baf317f4b5fda43e57cf/DevLog.md).
+> Why pay **\$99 USD / \$100 USD** a month for an AI coding agent? ArgonOS v9.8 gives you a full multi-agent AI desktop OS - free - inside one Kaggle notebook cell.
 
 ---
 
-## 📋 Available Frontier & Open Models in Kaggle Model Proxy
+## 📑 Table of Contents
+
+- [🚀 Quick Start Guide](#-quick-start-guide)
+- [✨ What's New in ArgonOS v9.8](#-whats-new-in-argonos-v98)
+  - [🪟 Micro-Kernel Window Manager Engine](#-micro-kernel-window-manager-engine)
+  - [📱 Three-Section Mobile Taskbar](#-three-section-mobile-taskbar)
+  - [🧩 Five Pre-Installed Native Core Applications](#-five-pre-installed-native-core-applications)
+  - [🛡️ v9.8 Autonomous Self-Update & Hardening Upgrades (Experiments 9 & 10)](#-v98-autonomous-self-update--hardening-upgrades-experiments-9--10)
+- [🧪 Autonomous Swarm Experiments & Scientific Discovery Lab (Experiments/)](#-autonomous-swarm-experiments--scientific-discovery-lab-experiments)
+  - [🔷 Experiment 7 — 8D Hurwitz-Fano Octonion Core & Multi-Domain Tournament](#-experiment-7--8d-hurwitz-fano-octonion-core--multi-domain-tournament)
+  - [🔶 Experiment 8 — Hurwitz Recurrent Unit (HRU): Triton & PyTorch 8D Octonion Language Model](#-experiment-8--hurwitz-recurrent-unit-hru-triton--pytorch-8d-octonion-language-model)
+  - [🔁 Experiment 9 — Autonomous Software Self-Update: JIT Shebang Dependencies & Adaptive Watchdogs](#-experiment-9--autonomous-software-self-update-jit-shebang-dependencies--adaptive-watchdogs)
+  - [✅ Experiment 10 — Closed-Loop Self-Testing & Automated Regression Suite](#-experiment-10--closed-loop-self-testing--automated-regression-suite)
+- [🥚 Easter Egg: The Matrix Inception (v8 inside v7)](#-easter-egg-the-matrix-inception-v8-inside-v7)
+- [🧬 Autonomous Self-Bootstrapping](#-autonomous-self-bootstrapping)
+- [🗂️ Repository Structure](#-repository-structure)
+- [📈 Kernel Evolution Table](#-kernel-evolution-table)
+- [🤖 Available Frontier & Open Models (Kaggle Model Proxy)](#-available-frontier--open-models-kaggle-model-proxy)
+  - [🌐 Google](#-google)
+  - [⚡ OpenAI](#-openai)
+  - [🧠 Anthropic](#-anthropic)
+  - [🔬 DeepSeek, Qwen, xAI & Zhipu AI](#-deepseek-qwen-xai--zhipu-ai)
+- [📚 Citation](#-citation)
+
+---
+
+## 🚀 Quick Start Guide
+
+> Why pay **\$99 USD / \$100 USD** a month for an AI coding agent? ArgonOS v9.8 gives you a full multi-agent AI desktop OS - free - inside one Kaggle notebook cell.
+
+**1.** Open a new [Kaggle Notebook](https://www.kaggle.com/code) and enable **Internet** in the settings panel.
+**2.** Paste the single cell below and run it. It downloads and boots the **v9.8 Release** kernel, `argon_code_98.py`.
+**3.** Open the desktop link printed in the output. The ArgonOS window manager, taskbar and five core apps are ready.
+
+```python
+# ArgonOS v9.8 - single-cell install & boot (Kaggle / Jupyter)
+import urllib.request
+URL = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/main/argon_code_98.py"
+urllib.request.urlretrieve(URL, "argon_code_98.py")
+exec(open("argon_code_98.py", encoding="utf-8").read(), globals())
+```
+
+Prefer to work from a full clone (kernels, notebooks and experiments)?
+
+```bash
+git clone https://github.com/peterbabulik/TalkToArgon10100102026.git
+cd TalkToArgon10100102026
+python argon_code_98.py
+```
+
+> 💡 **Tip:** Scripts that run inside the ArgonOS sandbox can declare their own dependencies and runtime budget in a header. v9.8 then installs them on the fly and adjusts the watchdog timeout:
+>
+> ```python
+> # requirements: torch, triton
+> # timeout: 600
+> ```
+
+---
+
+## ✨ What's New in ArgonOS v9.8
+
+### 🪟 Micro-Kernel Window Manager Engine
+
+| Feature | Description |
+|:--|:--|
+| **Touch-First Pointer Dragging** | Unified pointer events let you drag windows with mouse, pen or finger |
+| **Tap-to-Focus** | A single tap raises a window and gives it focus (z-order management) |
+| **Per-Window Maximize & Resize** | Each window can be maximized, restored and resized on its own |
+| **Fullscreen (F11)** | Full immersive desktop mode from the keyboard or the taskbar |
+| **GPU-Accelerated RGB LED Perimeter Glow** | Animated, GPU-composited RGB border glow around the active window |
+
+### 📱 Three-Section Mobile Taskbar
+
+| Left | Center | Right |
+|:--:|:--:|:--:|
+| 📊 **Live Telemetry** | ⛶ **Fullscreen Toggle** | 🚀 **App Launcher Dock** |
+
+### 🧩 Five Pre-Installed Native Core Applications
+
+| App | Purpose |
+|:--|:--|
+| 🤖 **TalkToArgon & DyTopo Swarm Studio** | Chat with Argon and orchestrate dynamic-topology (DyTopo) multi-agent swarms |
+| 📁 **Argon Files Explorer** | Browse, open and manage files in the workspace |
+| ✏️ **Argon Code Editor** | Edit kernel files, scripts and artifacts inside the OS |
+| ⚡ **Sandbox Console & Execution Terminal** | Run generated code safely, with watchdogs and live output |
+| ⚙️ **System Settings & BIOS Telemetry** | Configure models and runtime; inspect system and kernel health |
+
+### 🛡️ v9.8 Autonomous Self-Update & Hardening Upgrades (Experiments 9 & 10)
+
+| Upgrade | Implementation | Behaviour |
+|:--|:--|:--|
+| **JIT Shebang Dependency Auto-Installer** | `_ensure_script_dependencies` | Parses `# requirements: ...` headers and pip-installs any missing packages before execution |
+| **Directive-Driven & Heuristic Adaptive Watchdogs** | `_resolve_adaptive_timeout` | 3-tier timeout resolution (see below) |
+| **Surgical `SEARCH/REPLACE` Live Patching** | Patch engine | Applies localized patches to workspace files instead of regenerating whole files |
+| **Clean-Boot Sandbox Invariant Verification** | `verify_kernel_integrity` | Checks sandbox invariants at boot so that every session starts from a clean, verified state |
+
+```text
+Adaptive watchdog resolution order (_resolve_adaptive_timeout)
+  1. Directive   ->  "# timeout: N" in the script header        => N seconds
+  2. Heuristic   ->  AI/ML workload detected (torch, triton...)  => 600 s
+  3. Default     ->  everything else                             => 120 s
+```
+
+---
+
+## 🧪 Autonomous Swarm Experiments & Scientific Discovery Lab (`Experiments/`)
+
+ArgonOS swarms design, implement, run and write up their own research campaigns. Full index: **[`Experiments/README.md`](Experiments/README.md)**.
+
+| # | Campaign | Headline Result |
+|:--:|:--|:--|
+| 7 | [8D Hurwitz-Fano Octonion Core & Multi-Domain Tournament](Experiments/Experiment7) | ARC-AGI-3 ROC-AUC **0.9996**; $S^7$ drift $8.33 \times 10^{-15}$ over 10,000 steps |
+| 8 | [Hurwitz Recurrent Unit (HRU) — Triton & PyTorch LM](Experiments/Experiment8) | **9.85 PPL** with **45.6% fewer parameters** than LSTM |
+| 9 | [Autonomous Software Self-Update](Experiments/Experiment9) | ArgonOS upgraded itself **v9.7 → v9.8** |
+| 10 | [Closed-Loop Self-Testing & Regression Suite](Experiments/Experiment10) | **5/5 PASS** |
+
+### 🔷 Experiment 7 — 8D Hurwitz-Fano Octonion Core & Multi-Domain Tournament
+
+📂 [`Experiments/Experiment7`](Experiments/Experiment7) · core: `hurwitz_fano_core.py`
+
+The swarm rebuilt 8D octonion algebra from first principles on the Fano plane. It then tested this core against alternative algebras across several domains.
+
+| Metric | Result |
+|:--|:--|
+| Hurwitz norm composition residual | $1.78 \times 10^{-15}$ |
+| 10,000-step $S^7$ recurrence drift | $8.33 \times 10^{-15}$ (Sedenion 16D collapses through zero divisors at step 520) |
+| Catalan binary-tree disambiguation | **100.0%** (0% collisions vs 100% for Quaternions & $\mathrm{SO}(8)$) |
+| Compositional knowledge-graph Hits@1 | **100%** |
+| 8:1 compression | **$7.96\times$ lower error** ($\kappa = 1.0000$) |
+| ARC-AGI-3 frontier exploration ROC-AUC | **0.9996** ($21\times$ signal separation vs 0.5000 for Blake2b) |
+
+**Initial HRU benchmark (pure NumPy):**
+
+| Model | 500-step Parity | Deep Dyck-2 |
+|:--|:--:|:--:|
+| **HRU (8D Octonion)** | **100.0%** | **73.97%** |
+| Complex SSM | — | 45.21% |
+| Linear RNN | — | 50.68% |
+
+📄 Papers: `Paper_1_Hurwitz_Recurrent_Unit_HRU.md` · `Paper_2_Hurwitz_Fano_MultiDomain_ARC_AGI.md` · `hurwitz_fano_paper.md`
+
+### 🔶 Experiment 8 — Hurwitz Recurrent Unit (HRU): Triton & PyTorch 8D Octonion Language Model
+
+📂 [`Experiments/Experiment8`](Experiments/Experiment8) · model: `hru_pytorch_lm.py` · kernel: unrolled `@triton.jit` `fano_octonion_mul_kernel`
+
+Setup: **Tiny Shakespeare**, sequence length $L = 256$, **12 epochs**.
+
+| Model | Validation PPL ↓ | Parameters | $S^7$ Norm Drift |
+|:--|:--:|:--:|:--:|
+| **HRU (8D Octonion)** | **9.85** | **13,137** | **$2.22 \times 10^{-16}$** |
+| Euclidean LSTM | 11.13 | 24,133 | 0.8130 |
+| Euclidean GRU | 11.31 | 23,249 | 0.8519 |
+
+HRU has **45.6% fewer parameters** than the LSTM, thanks to 8:1 Hurwitz-Radon compression, and keeps the norm on $S^7$ to machine precision.
+
+```bash
+cd Experiments/Experiment8
+python hru_pytorch_lm.py
+```
+
+### 🔁 Experiment 9 — Autonomous Software Self-Update: JIT Shebang Dependencies & Adaptive Watchdogs
+
+📂 [`Experiments/Experiment9`](Experiments/Experiment9)
+
+The swarm upgraded its own operating system from **v9.7 to v9.8** ([`argon_code_98.py`](argon_code_98.py)). The upgrade adds automatic pip dependency provisioning (`_ensure_script_dependencies`) and the 3-tier adaptive execution timeouts (`_resolve_adaptive_timeout`: directive → 600 s AI/ML heuristic → 120 s default).
+
+### ✅ Experiment 10 — Closed-Loop Self-Testing & Automated Regression Suite
+
+📂 [`Experiments/Experiment10`](Experiments/Experiment10) · suite: `test_v98_features.py` · scorecard: **5/5 PASS**
+
+| Test | Feature Under Test | Result | Time |
+|:--|:--|:--:|--:|
+| `TEST-01` | JIT Shebang Auto-Installer | ✅ PASS | 1.451 s |
+| `TEST-02` | Watchdog Directive Timeout Enforcement | ✅ PASS | 5.028 s |
+| `TEST-03` | Heuristic AI Timeout Escalation | ✅ PASS | < 0.001 s |
+| `TEST-04` | Clean Boot Sandbox Invariants | ✅ PASS | < 0.001 s |
+| `TEST-05` | Swarm Directive Header Compliance | ✅ PASS | < 0.001 s |
+
+```bash
+python Experiments/Experiment10/test_v98_features.py
+```
+
+---
+
+## 🥚 Easter Egg: The Matrix Inception (v8 inside v7)
+
+ArgonOS v8 booted and ran *inside* ArgonOS v7: an operating system running its own successor.
+
+<video src="https://github.com/peterbabulik/TalkToArgon10100102026/raw/main/screen-20261021-194415~2.mp4" controls width="100%"></video>
+
+▶️ If the player does not load, watch the recording directly: [`screen-20261021-194415~2.mp4`](https://github.com/peterbabulik/TalkToArgon10100102026/blob/main/screen-20261021-194415~2.mp4)
+
+---
+
+## 🧬 Autonomous Self-Bootstrapping
+
+The seed kernel [`argonOScore.py`](argonOScore.py) was **autonomously self-bootstrapped in 4 minutes and 33 seconds**. Every later kernel generation descends from it.
+
+| File | Role |
+|:--|:--|
+| [`argonOScore.py`](argonOScore.py) | The self-bootstrapped core kernel |
+| [`PromtForArgonOSmutation.md`](PromtForArgonOSmutation.md) | The mutation prompt that drives kernel evolution |
+| [`DevLog.md`](DevLog.md) | Development log of the evolutionary process |
+| [`MessageFromGemini38flash.md`](MessageFromGemini38flash.md) | A message from the model that took part in bootstrapping |
+
+---
+
+## 🗂️ Repository Structure
+
+```text
+TalkToArgon10100102026/
+├── Experiments/                                # Autonomous Swarm Scientific Discovery Lab
+│   ├── Experiment10/                           # Closed-Loop Self-Testing (5/5 PASS)
+│   │   ├── argon_code_98.py                    # CURRENT RELEASE - ArgonOS v9.8
+│   │   ├── argon_output (10).json
+│   │   ├── PromptForTest.md
+│   │   ├── README.md
+│   │   ├── sample_heavy_workload.py
+│   │   ├── test_jit_shebang.py
+│   │   ├── test_timeout_kill.py
+│   │   ├── test_timeout_pass.py
+│   │   ├── test_v98_features.py                # Automated v9.8 regression suite
+│   │   └── test_v98_results.json
+│   ├── Experiment7/                            # 8D Hurwitz-Fano Octonion Core
+│   │   ├── argon_output (7).json
+│   │   ├── hru_benchmark.py
+│   │   ├── hru_benchmark_results.json
+│   │   ├── hurwitz_experiments_report.json
+│   │   ├── hurwitz_experiments_results.json
+│   │   ├── hurwitz_fano_core.py                # 8D Octonion algebra from first principles
+│   │   ├── hurwitz_fano_paper.md
+│   │   ├── myPromptsE7.md
+│   │   ├── Paper_1_Hurwitz_Recurrent_Unit_HRU.md
+│   │   ├── Paper_2_Hurwitz_Fano_MultiDomain_ARC_AGI.md
+│   │   ├── README.md
+│   │   ├── run_hurwitz_experiments.py
+│   │   └── whatIHaveDone.md
+│   ├── Experiment8/                            # HRU Triton/PyTorch Language Model
+│   │   ├── argon_output (8).json
+│   │   ├── hru_benchmark_results.json
+│   │   ├── hru_pytorch_lm.py                   # HRU language model + @triton.jit kernel
+│   │   ├── hru_pytorch_lm_results.json
+│   │   ├── hurwitz_fano_core.py                # 8D Octonion algebra from first principles
+│   │   ├── Paper_1_Hurwitz_Recurrent_Unit_HRU.md
+│   │   └── README.md
+│   ├── Experiment9/                            # Autonomous Self-Update (v9.7 -> v9.8)
+│   │   ├── argon_code_97.py
+│   │   ├── argon_code_98.py                    # CURRENT RELEASE - ArgonOS v9.8
+│   │   ├── argon_output (9).json
+│   │   ├── PromptForUpdate.md
+│   │   └── README.md
+│   └── README.md
+├── Argon_Chat.ipynb                            # Chat / swarm notebook front-end
+├── argon_code_92.py
+├── argon_code_93.py
+├── argon_code_94.py
+├── argon_code_95.py
+├── argon_code_96.py
+├── argon_code_97.py
+├── argon_code_98.py                            # CURRENT RELEASE - ArgonOS v9.8
+├── argon_code_v4.py
+├── argon_code_v5.py
+├── argon_code_v6.py
+├── argon_code_v7.py
+├── argon_code_v8.py
+├── argon_code_v9.py
+├── argon_code_v91.py
+├── argonOScore.py                              # Self-bootstrapped seed kernel (4 min 33 s)
+├── DevLog.md                                   # Development log
+├── MessageFromGemini38flash.md                 # Message from the bootstrapping model
+├── PromtForArgonOSmutation.md                  # Mutation prompt used for self-bootstrapping
+├── README.md
+├── screen-20261021-194415~2.mp4                # Matrix Inception easter-egg recording
+└── TalkToArgon.ipynb                           # Main Kaggle launcher notebook
+```
+
+---
+
+## 📈 Kernel Evolution Table
+
+| Generation | File | Notes |
+|:--|:--|:--|
+| Seed | `argonOScore.py` | Autonomously self-bootstrapped core in **4 min 33 s** |
+| v4 | [`argon_code_v4.py`](argon_code_v4.py) | Evolutionary kernel generation |
+| v5 | [`argon_code_v5.py`](argon_code_v5.py) | Evolutionary kernel generation |
+| v6 | [`argon_code_v6.py`](argon_code_v6.py) | Evolutionary kernel generation |
+| v7 | [`argon_code_v7.py`](argon_code_v7.py) | Host kernel of the **Matrix Inception** easter egg (runs v8 inside itself) |
+| v8 | [`argon_code_v8.py`](argon_code_v8.py) | Booted *inside* v7 - the Inception guest kernel |
+| v9 | [`argon_code_v9.py`](argon_code_v9.py) | Evolutionary kernel generation |
+| v9.1 | [`argon_code_v91.py`](argon_code_v91.py) | Evolutionary kernel generation |
+| v9.2 | [`argon_code_92.py`](argon_code_92.py) | Evolutionary kernel generation |
+| v9.3 | [`argon_code_93.py`](argon_code_93.py) | Evolutionary kernel generation |
+| v9.4 | [`argon_code_94.py`](argon_code_94.py) | Evolutionary kernel generation |
+| v9.5 | [`argon_code_95.py`](argon_code_95.py) | Evolutionary kernel generation |
+| v9.6 | [`argon_code_96.py`](argon_code_96.py) | Evolutionary kernel generation |
+| v9.7 | [`argon_code_97.py`](argon_code_97.py) | Baseline kernel upgraded autonomously in Experiment 9 |
+| v9.8 | [`argon_code_98.py`](argon_code_98.py) | **Current release** - Micro-Kernel Window Manager, JIT shebang deps, adaptive watchdogs, clean-boot verification |
+| Notebook | [`TalkToArgon.ipynb`](TalkToArgon.ipynb) | Main Kaggle launcher |
+| Notebook | [`Argon_Chat.ipynb`](Argon_Chat.ipynb) | Chat / swarm front-end |
+
+---
+
+## 🤖 Available Frontier & Open Models (Kaggle Model Proxy)
+
+ArgonOS reaches frontier and open-weight models through the **Kaggle Model Proxy**. Supported providers: **Google, OpenAI, Anthropic, DeepSeek, Qwen, xAI & Zhipu AI**.
 
 Switch between any of these models inside ArgonOS without personal API keys (covered by Kaggle's free quota):
 
@@ -184,3 +377,36 @@ Switch between any of these models inside ArgonOS without personal API keys (cov
 - `xai/grok-4.6`
 - `xai/grok-4.5-0708`
 - `zai/glm-5`
+
+---
+
+## 📚 Citation
+
+If ArgonOS or its experiments help your work, please cite:
+
+```bibtex
+@misc{babulik2026argon_experiments,
+  author       = {Babulik, Peter},
+  title        = {ArgonOS Autonomous Swarm Experiments: Self-Evolving Multi-Agent Scientific Discovery},
+  year         = {2026},
+  howpublished = {\url{https://github.com/peterbabulik/TalkToArgon10100102026/tree/main/Experiments}}
+}
+
+@article{babulik2026hru,
+  author  = {Babulik, Peter},
+  title   = {Hurwitz Recurrent Unit (HRU): Norm-Preserving 8D Octonion Recurrence for Language Modeling},
+  year    = {2026},
+  journal = {ArgonOS Autonomous Swarm Experiments},
+  url     = {https://github.com/peterbabulik/TalkToArgon10100102026/tree/main/Experiments/Experiment8}
+}
+```
+
+---
+
+<div align="center">
+
+**Built by [Peter Babulik](https://github.com/peterbabulik) and the ArgonOS autonomous swarm.**
+
+⭐ Star the repo if an OS that rewrites itself makes you smile.
+
+</div>
