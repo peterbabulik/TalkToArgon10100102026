@@ -1,0 +1,57 @@
+{
+  "exp1_long_horizon": {
+    "steps": 10000,
+    "xavier_final_norm": 2.4822452570810056e-10,
+    "diagonal_ssm_final_norm": 1.0000000000000067,
+    "hurwitz_final_norm": 0.9999999999999845,
+    "hurwitz_channel_coupling": 1.0,
+    "diagonal_channel_coupling": 0.25,
+    "exact_inversion_error_l2": 2.135825971801203e-13
+  },
+  "exp2_catalan_trees": {
+    "zobrist_xor": {
+      "tree_disambiguation_accuracy": 0.0,
+      "mean_min_pairwise_distance": 0.0
+    },
+    "quaternion": {
+      "tree_disambiguation_accuracy": 0.0,
+      "mean_min_pairwise_distance": 2.3554840245121883e-17
+    },
+    "so8_matrix": {
+      "tree_disambiguation_accuracy": 0.0,
+      "mean_min_pairwise_distance": 4.814315886088331e-16
+    },
+    "octonion": {
+      "tree_disambiguation_accuracy": 1.0,
+      "mean_min_pairwise_distance": 0.40632409505892964
+    }
+  },
+  "exp3_knowledge_graph": {
+    "RotatE_Complex": {
+      "MRR": 0.06320460713132818,
+      "Hits@1": 0.016666666666666666
+    },
+    "QuatE_Associative": {
+      "MRR": 0.6622222222222222,
+      "Hits@1": 0.0
+    },
+    "OctE_HurwitzFano": {
+      "MRR": 1.0,
+      "Hits@1": 1.0
+    }
+  },
+  "exp4_pytorch_layer": {
+    "available": false
+  },
+  "exp5_arc_frontier_novelty": {
+    "roc_auc_blake2b": 0.5,
+    "roc_auc_color_histogram": 0.5,
+    "roc_auc_hurwitz_23d": 0.9996,
+    "hurwitz_novel_to_noise_snr": 4.651070787457088
+  },
+  "q_trinity_v7_integration": {
+    "descriptor_dim": 15,
+    "descriptor_latency_us": 135.97,
+    "throughput_grids_per_sec": 7354
+  }
+}

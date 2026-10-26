@@ -1,0 +1,107 @@
+{
+  "experiment_1_long_horizon": {
+    "steps": 10000,
+    "xavier_dense_norm_at_10k": NaN,
+    "hurwitz_octonion_norm_at_10k": 1.0,
+    "order_sensitivity_AB_vs_BA_hurwitz": 1.761224,
+    "order_sensitivity_AB_vs_BA_zobrist": 0.0,
+    "exact_100step_inverse_recovery_error": 1.8095485877552938e-15,
+    "params_per_transition": {
+      "dense_8x8": 64,
+      "hurwitz_8d": 8
+    }
+  },
+  "experiment_2_tree_bracketing": {
+    "1D_Real_Commutative": {
+      "mean_tree_separation_LR": 0.0,
+      "mean_tree_separation_LM": 0.0,
+      "tree_collision_rate": 1.0
+    },
+    "2D_Complex_Abelian": {
+      "mean_tree_separation_LR": 0.0,
+      "mean_tree_separation_LM": 0.0,
+      "tree_collision_rate": 1.0
+    },
+    "4D_Quaternion_Associative": {
+      "mean_tree_separation_LR": 0.0,
+      "mean_tree_separation_LM": 0.0,
+      "tree_collision_rate": 1.0
+    },
+    "8D_Hurwitz_Fano_Octonion": {
+      "mean_tree_separation_LR": 1.091992,
+      "mean_tree_separation_LM": 1.110481,
+      "tree_collision_rate": 0.0
+    }
+  },
+  "experiment_3_knowledge_graph": {
+    "DistMult_Commutative_8D": {
+      "test_bracket_disambiguation_acc": 0.5,
+      "mean_cosine_margin": 0.0
+    },
+    "ComplEx_Associative_2D": {
+      "test_bracket_disambiguation_acc": 0.5,
+      "mean_cosine_margin": -0.0
+    },
+    "QuatE_Associative_4D": {
+      "test_bracket_disambiguation_acc": 0.55,
+      "mean_cosine_margin": -0.0089
+    },
+    "Hurwitz_Fano_OctonionE_8D": {
+      "test_bracket_disambiguation_acc": 0.6,
+      "mean_cosine_margin": 0.0988
+    }
+  },
+  "experiment_4_deep_and_low_data": {
+    "jacobian_16_layer": {
+      "dense_xavier_cond": 5.715743124365463e+17,
+      "unit_hurwitz_cond": 1.0000000000000016,
+      "dense_params_per_layer": 4096,
+      "hurwitz_params_per_layer": 512
+    },
+    "low_data_regression": {
+      "N_24": {
+        "dense_4096_params_test_R2": 0.3798,
+        "hurwitz_512_params_test_R2": 0.9962
+      },
+      "N_48": {
+        "dense_4096_params_test_R2": 0.7403,
+        "hurwitz_512_params_test_R2": 0.9968
+      },
+      "N_96": {
+        "dense_4096_params_test_R2": 0.9913,
+        "hurwitz_512_params_test_R2": 0.997
+      },
+      "N_192": {
+        "dense_4096_params_test_R2": 0.996,
+        "hurwitz_512_params_test_R2": 0.9972
+      }
+    }
+  },
+  "experiment_5_arc_frontier_ranking": {
+    "1_Blake2b_Hash_Binary": {
+      "roc_auc": 0.5,
+      "top30_precision": 0.0,
+      "mean_score_structural": 1.0,
+      "mean_score_distractor": 1.0
+    },
+    "2_Color_Histogram_L2": {
+      "roc_auc": 0.1167,
+      "top30_precision": 0.0667,
+      "mean_score_structural": 0.0013,
+      "mean_score_distractor": 0.0055
+    },
+    "3_Hurwitz_Fano_Grid_15D": {
+      "roc_auc": 0.7267,
+      "top30_precision": 0.7,
+      "mean_score_structural": 0.275,
+      "mean_score_distractor": 0.1435
+    },
+    "4_Hurwitz_Quadtree_Traj_23D": {
+      "roc_auc": 0.6989,
+      "top30_precision": 0.5333,
+      "mean_score_structural": 1.0205,
+      "mean_score_distractor": 0.7048
+    }
+  },
+  "elapsed_sec": 2.447
+}
