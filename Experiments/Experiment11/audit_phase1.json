@@ -1,0 +1,40 @@
+{
+  "artifacts_present": {
+    "integrity_report.md": 500,
+    "hru_benchmark_results.json": 5,
+    "hru_pytorch_lm_results.json": 7,
+    "argon_output.json": 6
+  },
+  "code_audit": {
+    "triton_kernel_defined": true,
+    "triton_called_in_training": false,
+    "hru_num_params_code": "None",
+    "hru_omits_W_ctx_from_count": true,
+    "hru_zero_gradients": [
+      "W_hurwitz",
+      "gate_w"
+    ],
+    "baseline_zero_gradients": [
+      "W_ih",
+      "W_hh"
+    ],
+    "hru_has_W_ctx2_skip": true,
+    "lstm_has_W_ctx2_skip": false,
+    "corpus_fallback_length": 1513
+  },
+  "algebra_results": {
+    "octonion_norm_error_max": 3.552713678800501e-15,
+    "octonion_alternativity_error_max": 1.2306961192854808e-14,
+    "octonion_moufang_error_max": 4.3556979659482056e-14,
+    "octonion_associator_norm_mean": 21.561376336754357,
+    "c6_specific_pair_prod_std_norm": 0.0,
+    "c6_specific_pair_prod_alt_norm": 2.8284271247461903,
+    "sedenion_zero_divisors_found": [
+      "(e_1+e_10)*(e_4-e_15) = 0",
+      "(e_1+e_10)*(e_6-e_13) = 0",
+      "(e_1+e_11)*(e_6-e_12) = 0",
+      "(e_1+e_11)*(e_7-e_13) = 0",
+      "(e_1+e_12)*(e_3-e_14) = 0"
+    ]
+  }
+}
