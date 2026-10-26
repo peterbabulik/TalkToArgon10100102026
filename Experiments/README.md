@@ -109,7 +109,7 @@ The Swarm is continuously deployed across multiple research vectors:
 
 To spin up a new autonomous research mission:
 
-1. **Boot ArgonOS v9** in any Kaggle, Colab, or local Jupyter environment:
+1. **Boot ArgonOS v9** in Kaggle Jupyter environment:
    ```python
    # Load ArgonOS verified release directly into RAM
    import urllib.request
