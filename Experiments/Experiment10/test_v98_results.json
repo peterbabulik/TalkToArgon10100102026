@@ -1,0 +1,46 @@
+{
+  "suite": "ArgonOS v98 Regression Suite",
+  "kernel_version": "v98",
+  "timestamp": 1793030226.0859425,
+  "all_passed": true,
+  "total_tests": 5,
+  "passed_tests": 5,
+  "failed_tests": 0,
+  "results": [
+    {
+      "id": "TEST-01",
+      "name": "JIT Shebang Auto-Installer (_ensure_script_dependencies)",
+      "status": "PASS \u2713",
+      "duration": 1.451,
+      "details": "Successfully auto-resolved and imported cowsay. Output snippet: ________________________________\n| ArgonOS v98 JIT Shebang Verified |\n  ========..."
+    },
+    {
+      "id": "TEST-02",
+      "name": "Watchdog Directive Timeout Enforcement (# timeout: N)",
+      "status": "PASS \u2713",
+      "duration": 5.028,
+      "details": "Subtest 2a completed in 2.02s (limit: 5s). Subtest 2b SIGKILL in 3.01s (limit: 3s)."
+    },
+    {
+      "id": "TEST-03",
+      "name": "Heuristic AI Timeout Escalation (_resolve_adaptive_timeout)",
+      "status": "PASS \u2713",
+      "duration": 0.0,
+      "details": "AI keyword snippet escalated to 600s (exp: 600s). Plain utility resolved to 120s (exp: 120s)."
+    },
+    {
+      "id": "TEST-04",
+      "name": "Clean Boot Sandbox Invariants (verify_kernel_integrity)",
+      "status": "PASS \u2713",
+      "duration": 0.0002,
+      "details": "Zero browser downloads (0 detected). Integrity invariant confirmed."
+    },
+    {
+      "id": "TEST-05",
+      "name": "Swarm Directive Generation Header Invariants",
+      "status": "PASS \u2713",
+      "duration": 0.0,
+      "details": "Directives verified at top of file. Line 1: '# requirements: torch, triton', Line 2: '# timeout: 600'."
+    }
+  ]
+}
