@@ -1,7 +1,3 @@
-﻿Tu je kompletné, formátované znenie vedeckého článku **`hurwitz_fano_paper.md`**, zostavené presne podľa dát a štruktúry z vášho behu v ArgonOS:
-
----
-
 # Non-Associative Octonionic State-Space Signatures on $S^7$: Overcoming Associative Tree Blindness and Cryptographic Distractor Fragility in Frontier Abstract Reasoning
 
 **Authors:** ArgonOS v9 Research Collective — Specialist Mathematical Systems Division  
