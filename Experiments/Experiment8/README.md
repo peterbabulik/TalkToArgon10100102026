@@ -1,5 +1,6 @@
 # Experiment 8: Hurwitz Recurrent Unit (HRU) — Triton & PyTorch 8D Octonion Language Model 🚀🧠
 
+[![GitHub Tree](https://img.shields.io/badge/GitHub-Experiments%2FExperiment8-181717?logo=github)](https://github.com/peterbabulik/TalkToArgon10100102026/tree/main/Experiments/Experiment8)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C.svg)](https://pytorch.org/)
 [![Triton](https://img.shields.io/badge/OpenAI%20Triton-Accelerated-green.svg)](https://github.com/openai/triton)
@@ -14,7 +15,7 @@ Evaluated against parameter-matched **LSTM** and **GRU** baselines on the **Tiny
 
 ## 📊 Benchmark Scorecard (Tiny Shakespeare, $L = 256$, 12 Epochs)
 
-All three models were trained under identical conditions on the Tiny Shakespeare corpus ($1,115,394$ characters, vocabulary size $V = 65$, context window $L = 256$, 90%/10% train/val split, AdamW optimizer with cosine learning rate decay).
+All three models were evaluated under identical training conditions on the Tiny Shakespeare corpus ($1,115,394$ characters, vocabulary size $V = 65$, context window $L = 256$, 90%/10% train/val split, AdamW optimizer with cosine learning rate decay, total training time $\approx 213.86$s).
 
 | Model Architecture | Hidden Manifold | Parameters | Compression Ratio | Final Train Loss | Final Val Loss | **Val Perplexity (PPL)** | $S^7$ Norm Drift ($\Delta_{\text{norm}}$) | Throughput (Tokens/sec) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -22,10 +23,10 @@ All three models were trained under identical conditions on the Tiny Shakespeare
 | **Euclidean LSTM Baseline** | $\mathbb{R}^d$ (Euclidean) | 24,133 | 1:1 (Dense) | 2.3859 | 2.4098 | 11.13 | $0.8130$ | **56,221** |
 | **Euclidean GRU Baseline** | $\mathbb{R}^d$ (Euclidean) | 23,249 | 1:1 (Dense) | 2.4063 | 2.4254 | 11.31 | $0.8519$ | 62,830 |
 
-### 🔑 Key Takeaways
+### 🔑 Key Findings
 1. **Sub-10 Perplexity Frontier:** HRU breaks through the sub-10 perplexity threshold (**9.85 PPL**), outperforming both LSTM (11.13 PPL) and GRU (11.31 PPL).
 2. **45.6% Parameter Efficiency:** HRU requires only **13,137 parameters** compared to 24,133 for LSTM and 23,249 for GRU. The 8:1 Hurwitz-Radon parameter compression in linear projections ($C \times C \times 8 = 512$ weights vs. $64 \times 64 = 4,096$ dense weights) significantly reduces model footprint without representational penalty.
-3. **Exact IEEE-754 Isometry on $S^7$:** The state norm deviation across $256$ unrolled steps remained bounded at **$2.2204 \times 10^{-16}$** (exact floating-point machine epsilon), proving that Hurwitz division-algebraic multiplication intrinsically prevents vanishing and exploding gradients.
+3. **Exact IEEE-754 Isometry on $S^7$:** State norm deviation across $256$ unrolled steps remained bounded at **$2.2204 \times 10^{-16}$** (exact floating-point machine epsilon), proving that Hurwitz division-algebraic multiplication intrinsically prevents vanishing and exploding gradients.
 
 ---
 
@@ -119,45 +120,72 @@ Med waclesend ther trar to thathe heanomend ckingned the my hano stit y har ang 
 
 ---
 
+## 📁 Repository & Experiment Artifacts
+
+All experiment assets are archived in the [**`Experiments/Experiment8`**](https://github.com/peterbabulik/TalkToArgon10100102026/tree/main/Experiments/Experiment8) directory:
+
+| File Artifact | Description |
+| :--- | :--- |
+| **[`hru_pytorch_lm.py`](hru_pytorch_lm.py)** | Standalone training benchmark script containing PyTorch `nn.Module`, Triton `@triton.jit` kernel, and vectorized NumPy Autograd engine. |
+| **[`hru_pytorch_lm_results.json`](hru_pytorch_lm_results.json)** | Complete JSON empirical telemetry: loss curves across 12 epochs, validation perplexity, throughput, and generated samples. |
+| **[`argon_output (8).json`](argon_output%20(8).json)** | **The Complete Autonomous Execution Flight Recorder.** Contains the full multi-agent reasoning trace of the DyTopo Swarm inside ArgonOS v9: automated dependency audits, runtime error diagnosis (einsum index collisions), and autonomous self-correction loops. |
+| **[`hru_benchmark_results.json`](hru_benchmark_results.json)** | Benchmark metrics from the initial Dyck-2 and Long-Range Parity sequence experiments ($L = 500$). |
+| **[`hurwitz_fano_core.py`](hurwitz_fano_core.py)** | Canonical 8D Octonion algebra core, Fano plane $\mathrm{PG}(2,2)$ multiplication tensor, and Hurwitz-Radon matrices. |
+| **[`Paper_1_Hurwitz_Recurrent_Unit_HRU.md`](Paper_1_Hurwitz_Recurrent_Unit_HRU.md)** | Full academic research preprint detailing the theoretical derivation, Jacobian proofs, and updated Section 5.6 benchmark results. |
+
+---
+
+## 🔍 The Autonomous Flight Log (`argon_output (8).json`)
+
+A unique aspect of this repository is **[`argon_output (8).json`](argon_output%20(8).json)**—the raw execution telemetry from the **ArgonOS v9 DyTopo Multi-Agent Swarm** that autonomously developed, debugged, and verified this architecture:
+
+1. **Autonomous Dependency Adaptation:** Detected missing local packages and seamlessly routed execution between pure NumPy analytical BPTT and PyTorch GPU kernels.
+2. **Autonomous Multi-Dimensional Tensor Debugging:** Diagnosed an `einsum` dimension conflict (`ValueError: 2 != 8`) during backward propagation, automatically identified that index `k` was overloaded for channel count and basis dimension, and refactored the subscripts to `bci, bcj, ijk -> bck`.
+3. **Preemption Watchdog Navigation:** Handled the micro-kernel's 120s process watchdog, demonstrating how agentic loops adapt when training deep neural architectures.
+
+---
+
 ## 🚀 Quick Start & Reproduction
 
 ### Prerequisites
 * Python 3.10+
-* PyTorch 2.0+ (with CUDA support for GPU execution)
-* OpenAI Triton (pre-installed in standard Kaggle/Colab GPU environments)
+* PyTorch 2.0+ (CUDA GPU recommended for full Triton kernel acceleration)
+* OpenAI Triton
 
 ### Installation & Execution
 ```bash
-# 1. Clone repository
+# 1. Clone the repository and navigate to Experiment 8
 git clone https://github.com/peterbabulik/TalkToArgon10100102026.git
-cd TalkToArgon10100102026
+cd TalkToArgon10100102026/Experiments/Experiment8
 
-# 2. Run the complete training benchmark (auto-downloads Tiny Shakespeare)
+# 2. Run the complete training benchmark (automatically downloads Tiny Shakespeare)
 python3 hru_pytorch_lm.py
 ```
 
-*Note: In container environments without PyTorch installed, `hru_pytorch_lm.py` automatically falls back to an exact, vectorized analytical NumPy BPTT engine.*
-
----
-
-## 📁 Repository Artifacts
-
-* **`hru_pytorch_lm.py`** — Complete standalone benchmark script (PyTorch, Triton kernel, and vectorized NumPy engine).
-* **`hru_pytorch_lm_results.json`** — Verified JSON benchmark telemetry, loss curves, and perplexity scores.
-* **`hurwitz_fano_core.py`** — Foundational 8D Octonion algebraic core and Hurwitz-Radon generator matrices.
-* **`Paper_1_Hurwitz_Recurrent_Unit_HRU.md`** — Comprehensive theoretical research preprint (updated with Section 5.6).
+*Note: In headless or non-GPU environments without PyTorch installed, `hru_pytorch_lm.py` automatically falls back to an exact vectorized NumPy Autograd engine.*
 
 ---
 
 ## 📜 Citation
 
-If you use the Hurwitz Recurrent Unit or the 8D Fano algebra in your research, please cite:
+If you use the Hurwitz Recurrent Unit, the 8D Octonionic language model, or the Fano kernel in your research, please cite:
 
 ```bibtex
-@article{argon_collective2026hru,
+@article{babulik2026hru,
   title   = {The Hurwitz Recurrent Unit (HRU): Norm-Preserving Division-Algebraic Gated Recurrence and Cayley-Dickson Phase-Coherent Sequence Modeling},
   author  = {Babulik, Peter and ArgonOS v9 Research Collective},
   journal = {arXiv preprint},
-  year    = {2026}
+  year    = {2026},
+  url     = {https://github.com/peterbabulik/TalkToArgon10100102026/tree/main/Experiments/Experiment8}
 }
 ```
+```
+
+---
+
+### Čo bolo doplnené a opravené:
+1. **Presný GitHub strom:** V hlavičke aj v texte je priamy link na `https://github.com/peterbabulik/TalkToArgon10100102026/tree/main/Experiments/Experiment8`.
+2. **Prominentné miesto pre `argon_output (8).json`:** 
+   - Zaradený v tabuľke artefaktov s popisom.
+   - Má **samostatnú dedikovanú sekciu** (*The Autonomous Flight Log*), ktorá vysvetľuje, že ide o "čiernu skrinku" a záznam celého autonómneho uvažovania, ladenia tenzorov v `einsum` a správania Swarmu.
+3. **Presné zladenie so súbormi zo screenshotu:** Všetkých 7 súborov, ktoré vidno na screenshote z vášho mobilu, je tam presne zaindexovaných a prepojených.
