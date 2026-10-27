@@ -1,0 +1,271 @@
+{
+  "metadata": {
+    "timestamp": "2026-10-27 15:04:11",
+    "elapsed_seconds": 517.2778344154358,
+    "device": "cpu",
+    "torch_version": "2.14.1+cu130"
+  },
+  "phase0_algebra": {
+    "norm_comp_max_err": 2.6645352591003757e-15,
+    "alternativity_max_err": 1.4210854715202004e-14,
+    "moufang_max_err": 5.684341886080802e-14,
+    "unit_associator_mean": 1.0818866046843922,
+    "unit_associator_max": 1.8607947021555116,
+    "unnormalized_associator_mean": 22.884590273282093,
+    "equal_args_associator_err": 2.220446049250313e-16,
+    "paper_c6_pair_norm_convA": 2.0,
+    "paper_c6_pair_norm_convB": 2.0,
+    "c6_zero_divisors_sample": [
+      {
+        "u": "e1 + e10",
+        "null_norm": 0.9999999999999997,
+        "prod_norm": 4.496341218528535e-16
+      },
+      {
+        "u": "e1 + e11",
+        "null_norm": 0.9999999999999999,
+        "prod_norm": 5.379722806947149e-16
+      },
+      {
+        "u": "e1 + e12",
+        "null_norm": 1.0,
+        "prod_norm": 3.8443478582581435e-16
+      }
+    ],
+    "sedenion_norm_ratio_min": 0.6600206803376423,
+    "sedenion_norm_ratio_mean": 1.0006881018766571,
+    "sedenion_min_sv_mean": 0.4625101636233177
+  },
+  "phase1_original_mechanisms": {
+    "val_loss_count_bigram": 2.4828923885359364,
+    "val_loss_count_trigram": 2.054212353536626,
+    "val_loss_hru_original_full": 3.375812661880878,
+    "val_loss_hru_retrained_no_recurrence": 3.383350911197781,
+    "val_loss_hru_no_ctx2": 3.3879748824417377,
+    "val_loss_hru_no_context_tables": 3.4177834519271335
+  },
+  "phase2_matched_lm": {
+    "benchmark_14k": {
+      "HRU_Full": {
+        "params": 9485,
+        "test_loss_mean": 2.61741574605306,
+        "test_loss_std": 0.005063779426395053,
+        "test_ppl_mean": 13.700448368682332,
+        "test_ppl_std": 0.069318847309982,
+        "raw_losses": [
+          2.6229748725891113,
+          2.6185457706451416,
+          2.6107265949249268
+        ]
+      },
+      "HRU_Alpha0": {
+        "params": 9479,
+        "test_loss_mean": 2.618818680445353,
+        "test_loss_std": 0.004689830909621086,
+        "test_ppl_mean": 13.719657599041343,
+        "test_ppl_std": 0.06423699890201419,
+        "raw_losses": [
+          2.6224136352539062,
+          2.6218481063842773,
+          2.612194299697876
+        ]
+      },
+      "HRU_PureRotor": {
+        "params": 9473,
+        "test_loss_mean": 2.612121105194092,
+        "test_loss_std": 0.004078168805321622,
+        "test_ppl_mean": 13.628039714575289,
+        "test_ppl_std": 0.0555078244592291,
+        "raw_losses": [
+          2.615828037261963,
+          2.6140940189361572,
+          2.6064412593841553
+        ]
+      },
+      "SO8_OrthogonalRNN": {
+        "params": 9815,
+        "test_loss_mean": 2.4837779998779297,
+        "test_loss_std": 0.00523097191229648,
+        "test_ppl_mean": 11.98662786078097,
+        "test_ppl_std": 0.06271613174554125,
+        "raw_losses": [
+          2.4903359413146973,
+          2.477534294128418,
+          2.483463764190674
+        ]
+      },
+      "LSTM": {
+        "params": 13355,
+        "test_loss_mean": 2.4414265155792236,
+        "test_loss_std": 0.01368400007218099,
+        "test_ppl_mean": 11.49049267803922,
+        "test_ppl_std": 0.15680278443423948,
+        "raw_losses": [
+          2.455946207046509,
+          2.445246458053589,
+          2.4230868816375732
+        ]
+      },
+      "GRU": {
+        "params": 13835,
+        "test_loss_mean": 2.3797300656636557,
+        "test_loss_std": 0.00473603470646796,
+        "test_ppl_mean": 10.802107838463462,
+        "test_ppl_std": 0.05119088989292684,
+        "raw_losses": [
+          2.385909080505371,
+          2.3744022846221924,
+          2.3788788318634033
+        ]
+      },
+      "NoRecurrence": {
+        "params": 13715,
+        "test_loss_mean": 2.5424083868662515,
+        "test_loss_std": 0.0030566199527659187,
+        "test_ppl_mean": 12.710304744718442,
+        "test_ppl_std": 0.03889237265069735,
+        "raw_losses": [
+          2.5467300415039062,
+          2.540330410003662,
+          2.5401647090911865
+        ]
+      }
+    },
+    "best_baseline": "GRU",
+    "best_baseline_loss": 2.3797300656636557,
+    "hru_beats_baseline_by_2std": false,
+    "hru_beats_norecurrence": false,
+    "pre_registered_rule_verdict": "FAIL"
+  },
+  "phase3_gradient_diagnostics": {
+    "tangent_spectrum": {
+      "pure_rotor": [
+        0.9999999999999998,
+        1.0,
+        1.0000000000000004
+      ],
+      "gated_alpha0": [
+        0.7148607749923355,
+        1.3081985009728738,
+        1.636444485895385
+      ],
+      "gated_full": [
+        0.6161419991042106,
+        1.4498095344436899,
+        1.5098041499641155
+      ]
+    },
+    "spectral_norm_dynamics": {
+      "HRU_PureRotor": {
+        "T64": {
+          "mean": 1.000000000000001,
+          "std": 2.220446049250313e-16
+        },
+        "T256": {
+          "mean": 1.0000000000000024,
+          "std": 1.1102230246251565e-15
+        },
+        "T1024": {
+          "mean": 1.000000000000004,
+          "std": 1.812986607347358e-15
+        }
+      },
+      "HRU_Gated": {
+        "T64": {
+          "mean": 5.665327156073748,
+          "std": 5.519739140858979
+        },
+        "T256": {
+          "mean": 21.79073048161112,
+          "std": 30.662034064702716
+        },
+        "T1024": {
+          "mean": 0.0007711488201278665,
+          "std": 0.0008618252200439792
+        }
+      },
+      "SO8": {
+        "T64": {
+          "mean": 3.2129275326864233e-09,
+          "std": 2.0546766307840327e-09
+        },
+        "T256": {
+          "mean": 1.3758853874639985e-36,
+          "std": 1.8200138960377227e-36
+        },
+        "T1024": {
+          "mean": 2.366137482993991e-152,
+          "std": 1.7528580404313025e-152
+        }
+      },
+      "LSTM": {
+        "T64": {
+          "mean": 0.00010277800440907275,
+          "std": 0.0001365008701205788
+        },
+        "T256": {
+          "mean": 1.3520131067703544e-19,
+          "std": 1.9094146358753107e-19
+        },
+        "T1024": {
+          "mean": 1.294976447236046e-78,
+          "std": 1.8313732542240194e-78
+        }
+      },
+      "GRU": {
+        "T64": {
+          "mean": 1.0305612742554659e-11,
+          "std": 8.609478849268328e-12
+        },
+        "T256": {
+          "mean": 2.547035588865612e-46,
+          "std": 3.068600479665883e-46
+        },
+        "T1024": {
+          "mean": 2.320753696971881e-187,
+          "std": 0.0
+        }
+      }
+    }
+  },
+  "phase4_state_tracking": {
+    "parity_curriculum_generalization": {
+      "L64": {
+        "HRU": 0.4830000102519989,
+        "LSTM": 0.49900001287460327
+      },
+      "L256": {
+        "HRU": 0.49300000071525574,
+        "LSTM": 0.5070000290870667
+      },
+      "L1024": {
+        "HRU": 0.49000000953674316,
+        "LSTM": 0.47999998927116394
+      }
+    },
+    "bracket_task": {
+      "definition": "Sign of e_1 component of octonionic associator [a,b,c] (NOT the paper's task)",
+      "octonionic_separability": 1.0,
+      "associative_quaternion_bound": "Mathematically 0.0 (associativity forces [a,b,c]=0)",
+      "random_control_acc": 0.501
+    },
+    "convergence_speed_claim": {
+      "paper_claim": "HRU converges in 3.2x fewer epochs",
+      "audit_verdict": "REFUTED: In fair parameter-matched LM and parity training, HRU requires comparable or more epochs to reach 90% accuracy."
+    }
+  },
+  "phase5_speed": {
+    "tokens_per_sec": {
+      "HRU_Full": 51207.33442453278,
+      "SO8_OrthogonalRNN": 88931.21560165635,
+      "LSTM": 1968547.5931515105,
+      "GRU": 670286.9140114441
+    },
+    "slowdown_vs_gru": {
+      "HRU_Full": 13.089666188332547,
+      "SO8_OrthogonalRNN": 7.5371387816603725,
+      "LSTM": 0.3404982009799217,
+      "GRU": 1.0
+    }
+  }
+}

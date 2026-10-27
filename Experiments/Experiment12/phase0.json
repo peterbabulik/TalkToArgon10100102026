@@ -1,0 +1,24 @@
+{
+  "norm_composition_max_err": 5.329070518200751e-15,
+  "alternativity_max_err": 1.4210854715202004e-14,
+  "moufang_max_err": 5.684341886080802e-14,
+  "unit_octonion_associator_mean": 1.102903042532431,
+  "unit_octonion_associator_max": 1.8112914938186397,
+  "associator_equal_args_err": 1.4210854715202004e-14,
+  "sedenion_formulas": {
+    "Convention_A": "(a, b)(c, d) = (ac - d*b, da + bc*)",
+    "Convention_B": "(a, b)(c, d) = (ac - db*, a*d + cb)"
+  },
+  "target_pair_norm_Convention_A": 2.0,
+  "target_pair_norm_Convention_B": 2.0,
+  "target_pair_min_singular_value": 3.332678961850865e-17,
+  "paper_example_holds_in_standard_convention": false,
+  "random_unit_sedenion_norm_ratio_min": 0.5991935193803135,
+  "random_unit_sedenion_norm_ratio_mean": 0.998783754267296,
+  "random_unit_sedenion_norm_ratio_max": 1.2458547050718878,
+  "random_unit_sedenion_min_sv_distribution": {
+    "min": 0.11939557644895808,
+    "mean": 0.4855231447766458,
+    "max": 0.7833830651496658
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "val_sequences": 200,
+  "seq_len": 256,
+  "n_gram_baselines": {
+    "bigram_val_loss": 2.485920419312379,
+    "bigram_perplexity": 12.012171402748725,
+    "trigram_val_loss": 2.1328598077934147,
+    "trigram_perplexity": 8.438966156450665
+  },
+  "model_evaluations": {
+    "HRU_Full": {
+      "val_loss_200": 2.3032050984611576,
+      "val_ppl_200": 10.0062019771023,
+      "params": 13137
+    },
+    "HRU_NoRecurrence": {
+      "val_loss_200": 2.2940453539034382,
+      "val_ppl_200": 9.914966209060177,
+      "params": 13137
+    },
+    "HRU_NoWctx2": {
+      "val_loss_200": 2.505154076382275,
+      "val_ppl_200": 12.245445554408288,
+      "params": 13137
+    },
+    "HRU_NoRec_NoWctx2": {
+      "val_loss_200": 2.4977249146259224,
+      "val_ppl_200": 12.15480925135372,
+      "params": 13137
+    },
+    "LSTM_Baseline_LM": {
+      "val_loss_200": 2.4123582163685513,
+      "val_ppl_200": 11.16024841784052,
+      "params": 24133
+    },
+    "GRU_Baseline_LM": {
+      "val_loss_200": 2.430570787513186,
+      "val_ppl_200": 11.365367438761297,
+      "params": 23249
+    }
+  }
+}
