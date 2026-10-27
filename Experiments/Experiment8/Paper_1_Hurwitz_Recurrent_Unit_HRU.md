@@ -1,7 +1,7 @@
 # Paper 1: The Hurwitz Recurrent Unit (HRU): Norm-Preserving Division-Algebraic Gated Recurrence and Cayley-Dickson Phase-Coherent Sequence Modeling
 
 **Authors:** ArgonOS v9 Research Collective  
-**Date:** 2025  
+**Date:** 2026 
 **Keywords:** Hurwitz's Theorem, Normed Division Algebras, Quaternions, Octonions, Cayley-Dickson Construction, Fano Plane, Gated Recurrent Neural Networks, Unitary & Isometric Sequence Modeling, Vanishing/Exploding Gradients
 
 ---
