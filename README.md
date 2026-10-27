@@ -59,8 +59,8 @@
 ```python
 import urllib.request
 
-# Raw link to ArgonOS v9.8 Release
-url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/9ce99515e7972e11980f9fabcf17ba49d2b62c5e/argon_code_98.py"
+# Raw link to ArgonOS v9.9 Release
+url = "https://raw.githubusercontent.com/peterbabulik/TalkToArgon10100102026/c5403c31e13f6d8fca9b3750bad7ecfa5e20fab4/argon_code_99.py"
 
 # 1. Fetch directly into RAM (zero disk footprint to keep workspace clean)
 with urllib.request.urlopen(url) as response:
