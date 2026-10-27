@@ -235,7 +235,7 @@ Instead of forcing the LLM to rewrite the entire monolithic file, Swarm agents w
 
 ---
 
-## [v9.5.1] — The Autonomous Self-Upgrade
+## [v9.6] — The Autonomous Self-Upgrade
 **Theme:** *Test-Driven Self-Evolution without External Intervention*
 
 Immediately upon deploying the diff engine, ArgonOS was prompted to inspect its environment and implement 3 new capabilities. Operating purely within its own loop, the Swarm autonomously patched the kernel with:
@@ -274,10 +274,21 @@ first_match = self.editor_search_results.options[1][1]
 self._on_search_result_selected({"new": first_match})
 assert "ArgonOS_Kernel_Verification_Token_99" in self.editor_textarea.value
 ```
+### **Version 9.8 (JIT Dependencies)**
+*   **Date:** 2026-10-27
+*   **Changes:**
+    *   Integrated Just-In-Time (JIT) dependency resolution for faster module loading.
+    *   Reduced initial startup time by deferring non-essential library imports.
 
 ---
+### **Version 9.9 (Network Freeze & Watchdog Patch)**
+*   **Date:** 2026-10-27
+*   **Changes:**
+    *   Implemented a network watchdog to monitor and restart frozen connections.
+    *   Resolved intermittent network freeze issues during high-throughput operations.
+---
 
-## Current Architecture Summary (v9.7)
+## Current Architecture Summary (v9.x)
 
 | Layer | Implementation |
 | :--- | :--- |
