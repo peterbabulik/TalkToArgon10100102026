@@ -274,18 +274,30 @@ first_match = self.editor_search_results.options[1][1]
 self._on_search_result_selected({"new": first_match})
 assert "ArgonOS_Kernel_Verification_Token_99" in self.editor_textarea.value
 ```
-### **Version 9.8 (JIT Dependencies)**
-*   **Date:** 2026-10-27
-*   **Changes:**
-    *   Integrated Just-In-Time (JIT) dependency resolution for faster module loading.
-    *   Reduced initial startup time by deferring non-essential library imports.
+
+
+
+## [v9.8] — Just-In-Time (JIT) Dependency Resolution & Script-Level Directives
+**Theme:** *Autonomous Environment Provisioning & Dynamic Execution Timeouts*
+
+### Overview
+As Swarm experiments grew more compute-intensive (e.g., PyTorch/Triton kernels and benchmark suites in `Experiment9` and `Experiment10`), hardcoded execution timeouts and missing third-party packages became friction points. Version 9.8 introduced header-level directive parsing directly inside `execute_file()`:
+
+* **JIT Dependency Installer (`# requirements:`):** Scans the top of generated Python scripts for `# requirements: pkg1, pkg2` directives and automatically provisions missing packages via `pip install` prior to execution.
+* **Dynamic Per-Script Timeouts (`# timeout:`):** Parses `# timeout: <seconds>` directives to dynamically override the default 120s Ring-3 subprocess timeout for heavy training and benchmarking workloads while preserving POSIX process group (`PGID`) preemption.
 
 ---
-### **Version 9.9 (Network Freeze & Watchdog Patch)**
-*   **Date:** 2026-10-27
-*   **Changes:**
-    *   Implemented a network watchdog to monitor and restart frozen connections.
-    *   Resolved intermittent network freeze issues during high-throughput operations.
+
+## [v9.9] — Network Freeze Mitigation & LLM Watchdog Patch
+**Theme:** *Resilient Cloud API Orchestration & Deadlock Recovery*
+
+### Overview
+During prolonged multi-agent Swarm runs (`Experiment11`), intermittent upstream LLM proxy hangs and silent socket stalls could freeze the background Swarm worker thread indefinitely without raising an exception.
+
+* **LLM Call Watchdog & Timeout Enforcement:** Wrapped remote model proxy invocations in a preemptive watchdog timer so stalled network sockets cannot block the Swarm daemon thread indefinitely.
+* **Graceful Recovery & Retry Loop:** Automatically detects frozen or timed-out network requests, logs telemetry warnings to the Sandbox Console, and safely recovers or terminates the turn without locking up the ArgonOS desktop UI.
+
+
 ---
 
 ## Current Architecture Summary (v9.x)
